@@ -202,7 +202,7 @@ h2.sec .mini{font-size:12px;font-weight:400;color:var(--ink2)}
 .src-key a{color:var(--src-key-link);font-weight:600}
 /* 企业财报专栏 */
 .rep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:4px}
-.rep-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden}
+.rep-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;min-width:0;overflow-wrap:anywhere;word-break:break-word}
 .rep-card.assoc{border-color:var(--line-2);background:linear-gradient(180deg,var(--accent-soft),var(--card))}
 .rep-card.assoc .rep-ticker{background:var(--accent-soft);color:var(--accent-ink);font-weight:600}
 .rep-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
@@ -214,7 +214,7 @@ h2.sec .mini{font-size:12px;font-weight:400;color:var(--ink2)}
 .rep-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
 .rep-metric{background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:7px 6px;text-align:center;min-width:0}
 .rep-metric .k{font-size:10.5px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rep-metric .v{font-size:13px;font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.rep-metric .v{font-size:13px;font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;word-break:break-all}
 .rep-metric .y{font-size:10.5px;margin-top:1px;font-variant-numeric:tabular-nums;font-weight:600}
 .y-up{color:var(--up)}.y-down{color:var(--down)}.y-flat{color:var(--flat)}
 .rep-seg{background:var(--accent-soft);border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:12px;color:var(--ink2);overflow-wrap:anywhere;word-break:break-word;line-break:strict}
@@ -293,7 +293,7 @@ footer{margin-top:36px;font-size:12px;color:var(--ink2);text-align:center}
 <div class="wrap">
   <header class="top">
     <h1>📷 摄影器材配件新品收集</h1>
-    <span id="upd">更新于 2026-08-01 23:05</span>
+    <span id="upd">更新于 2026-08-01 23:08</span>
     <div class="tools">
       <button id="share-btn" type="button">🔗 分享</button>
       <button id="theme-btn" type="button">🌓 主题</button>
@@ -305,7 +305,7 @@ footer{margin-top:36px;font-size:12px;color:var(--ink2);text-align:center}
     <span class="nav-anchor" data-target="sec-dir">🏭 厂商 <span class="n" id="nav-n-dir">0</span></span>
     <span class="nav-anchor" data-target="sec-rep">📊 财报 <span class="n" id="nav-n-rep">0</span></span>
   </nav>
-  <div class="subtitle">监控 <b id="src-prose-n">85</b> 家厂商官网 + 微信公众号 / 微博相机圈 / 小红书 / 中英文行业媒体 / 评测流言站 / CameraHot / Kickstarter 众筹，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-01 23:05</b>。</div>
+  <div class="subtitle">监控 <b id="src-prose-n">85</b> 家厂商官网 + 微信公众号 / 微博相机圈 / 小红书 / 中英文行业媒体 / 评测流言站 / CameraHot / Kickstarter 众筹，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-01 23:08</b>。</div>
   <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源）</div>
 
   <div id="pending-banner" hidden></div>
@@ -339,7 +339,7 @@ footer{margin-top:36px;font-size:12px;color:var(--ink2);text-align:center}
 <a id="toBottom" href="#page-bottom" title="直达底部">↓</a>
 
 <script>
-const UPDATED = "2026-08-01 23:05";
+const UPDATED = "2026-08-01 23:08";
 
 const HOT = [
   {

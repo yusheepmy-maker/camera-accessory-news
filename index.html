@@ -188,6 +188,8 @@ h2.sec .mini{font-size:12px;font-weight:500;color:var(--ink3);background:var(--c
 .filter-title .count{font-size:11px;font-weight:500;color:var(--ink3);background:var(--chipbg);padding:2px 9px;border-radius:999px}
 .fbar{display:flex;flex-wrap:wrap;align-items:center;gap:5px;justify-content:flex-end;flex:1}
 .fbar:empty{display:none}
+.empty-state{padding:40px 16px;text-align:center;color:var(--ink3);font-size:15px}
+.link-btn{background:none;border:none;color:var(--accent);cursor:pointer;font:inherit;text-decoration:underline;padding:0 4px}
 .fchip{font-size:11px;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);cursor:pointer;user-select:none;white-space:nowrap;border:1px solid transparent;font-weight:500;transition:all var(--transition-fast)}
 .fchip:hover{background:var(--accent);color:#fff}
 .fbar-clear{font-size:11px;padding:4px 10px;min-height:28px;border-radius:8px;border:1px solid var(--line-2);background:transparent;color:var(--ink3);cursor:pointer;white-space:nowrap;font-weight:500}
@@ -369,7 +371,7 @@ footer{margin-top:48px;font-size:12.5px;color:var(--ink3);text-align:center;font
 
 /* 月份分组 */
 .month{margin-bottom:8px}
-.month-head{position:sticky;top:62px;z-index:20;display:flex;align-items:center;gap:10px;list-style:none;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:9px 13px;border:1px solid var(--line);border-radius:12px;cursor:pointer;user-select:none;margin-bottom:12px;font-weight:800;color:var(--ink)}
+.month-head{position:sticky;top:64px;z-index:39;display:flex;align-items:center;gap:10px;list-style:none;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:9px 13px;border:1px solid var(--line);border-radius:12px;cursor:pointer;user-select:none;margin-bottom:12px;font-weight:800;color:var(--ink)}
 .month-head::-webkit-details-marker{display:none}
 .month-head .m{font-size:15px}
 .month-head .m-cnt{font-size:12px;color:var(--ink3);background:var(--chipbg);padding:2px 10px;border-radius:999px;font-weight:600}
@@ -429,7 +431,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <div class="wrap">
   <header class="top">
     <h1>📷 摄影器材配件新品收集</h1>
-    <span id="upd">更新于 2026-08-02 19:08</span>
+    <span id="upd">更新于 2026-08-02 19:28</span>
     <div class="tools">
       <button id="share-btn" type="button">🔗 分享</button>
       <button id="theme-btn" type="button">🌓 主题</button>
@@ -441,7 +443,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
     <span class="nav-anchor" data-target="sec-dir">🏭 厂商 <span class="n" id="nav-n-dir">0</span></span>
     <span class="nav-anchor" data-target="sec-rep">📊 财报 <span class="n" id="nav-n-rep">0</span></span>
   </nav>
-  <div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-02 19:08</b>。</div>
+  <div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-02 19:28</b>。</div>
   <div class="weekly" id="weekly" aria-label="本周速览" aria-live="polite"></div>
   <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源） · <a href="https://camcat.net/" target="_blank" rel="noopener">CameraHot</a>（camcat.net，爆料时间线聚合）</div>
 
@@ -480,7 +482,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <a id="toBottom" href="#page-bottom" title="直达底部">↓</a>
 
 <script>
-const UPDATED = "2026-08-02 19:08";
+const UPDATED = "2026-08-02 19:28";
 
 const HOT = [
   {
@@ -10834,6 +10836,7 @@ const REPORTS = [
 </script>
 <script>var BRANDS = buildBrandsMap(BRANDS_DIR);</script>
 <script>
+(function(){
 /* ================= 渲染逻辑（与 build_standalone.js 预渲染保持一致） ================= */
 var TYPES={announce:{label:"官宣",cls:"t-announce"},tease:{label:"预热",cls:"t-tease"},release:{label:"发布",cls:"t-release"},presale:{label:"预售",cls:"t-presale"},rumor:{label:"爆料",cls:"t-rumor"},cert:{label:"认证",cls:"t-cert"},sale:{label:"开售",cls:"t-sale"},fw:{label:"固件",cls:"t-fw"},news:{label:"动态",cls:"t-news"},leak:{label:"泄漏",cls:"t-leak"},stop:{label:"停产",cls:"t-stop"}};
 var CATS={host_cn:"国产摄影机",host_gl:"全球摄影机",ccd:"兴趣相机（CCD/复古/胶片/拍立得）",lens_cn:"国产镜头",lens_gl:"全球镜头",light:"灯光厂商",av:"视听厂商",acc:"配件厂商",vlog:"配件·vlog",ai:"AI摄影软件"};
@@ -10879,9 +10882,6 @@ function ccdPlaceholderTag(b){
   return "占位 · "+(b.typical||ccdTypeLabel(b)+"代表机型");
 }
 /* 目录卡片：子类型 chip + 占位 flag 已去掉，保持兴趣相机卡片简洁 */
-function ccdBadges(b){
-  return "";
-}
 function normBrand(b){return BRAND_ALIASES[b]||CCD_ALIASES[b]||b||"?"}
 /* BRANDS 由 lib/brand_meta.js 加载后调 buildBrandsMap(BRANDS_DIR) 动态生成（确保与 data.js 同步），见下方 4 个 <script> 加载顺序。颜色装饰见 lib/brand_meta.js 内 BRANDS_DECOR。 */
 var STAGES={rumor:{label:"传闻",cls:"s-rumor"},leak:{label:"爆料",cls:"s-leak"},tease:{label:"预热",cls:"s-tease"},official:{label:"官宣",cls:"s-official"},presale:{label:"预售",cls:"s-presale"},onsale:{label:"上市",cls:"s-onsale"}};
@@ -10889,16 +10889,26 @@ var STAGE_DEFAULT={rumor:"rumor",leak:"leak",tease:"tease",announce:"official",r
 /* CONF_OFFICIAL/CONF_MEDIA/CONF_BLOG/CONF_RUMOR/CONF_FEATURED/CONF_TIMELINE、hostOf、confidenceOf 均由 lib/confidence.js 加载后挂 globalThis。严格匹配（2026-07-28 P1 修复）替代原 indexOf 子串匹配，避免子域名误判。 */
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function attr(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;")}
+// 安全纵深：仅放行 http/https/mailto/tel 与相对路径；任何非白名单协议（javascript:/data:/vbscript: 等）一律降级为 "#"，在 attr() 调用前统一过一道
+function safeUrl(u){
+  u = u==null ? "" : String(u).trim();
+  if(!u) return "#";
+  if(/^(https?:|mailto:|tel:)/i.test(u)) return u;
+  if(/^[a-z][a-z0-9+.\-]*:/i.test(u)) return "#"; // 含协议前缀但非白名单 → 拦截
+  return u; // 相对路径 / 锚点
+}
+// 输入节流：避免每次按键全量重渲染长列表
+function debounce(fn,ms){var t;return function(){var a=arguments,c=this;clearTimeout(t);t=setTimeout(function(){fn.apply(c,a)},ms);};}
 function socialHtml(b){
   var s=b.social||{};
   var map=[["ins","IG","Instagram"],["yt","YT","YouTube"],["x","X","X"],["fb","FB","Facebook"],["tiktok","TK","TikTok"],["weibo","微","微博"],["xiaohongshu","书","小红书"],["bilibili","B站","B站"]];
-  var out=map.filter(function(m){return s[m[0]];}).map(function(m){return '<a href="'+attr(s[m[0]])+'" target="_blank" rel="noopener" title="'+m[2]+'">'+m[1]+'</a>';});
+  var out=map.filter(function(m){return s[m[0]];}).map(function(m){return '<a href="'+attr(safeUrl(s[m[0]]))+'" target="_blank" rel="noopener" title="'+m[2]+'">'+m[1]+'</a>';});
   return out.length?'<span class="social-row">'+out.join("")+'</span>':'';
 }
 function akaHtml(b){
   if(!b||!b.aka)return "";
   var a=b.aka, nm=a.name||(typeof a==="string"?a:""), url=a.url;
-  return '<span class="aka">子品牌：'+(url?'<a href="'+attr(url)+'" target="_blank" rel="noopener">'+esc(nm)+'</a>':esc(nm))+'</span>';
+  return '<span class="aka">子品牌：'+(url?'<a href="'+attr(safeUrl(url))+'" target="_blank" rel="noopener">'+esc(nm)+'</a>':esc(nm))+'</span>';
 }
 function fmtDate(s,today){if(!s)return "";var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s);if(!m)return s;var y=m[1],mo=parseInt(m[2],10),d=parseInt(m[3],10);var t=today||new Date();if(t instanceof Date){if(t.getFullYear()==+y&&(t.getMonth()+1)===mo&&t.getDate()===d)return "今天"}return y+"年"+mo+"月"+d+"日"}
 function brandPill(b){var nb=normBrand(b);var i=BRANDS[nb]||{en:(nb||"?").toUpperCase(),c:"#475063"};return '<span class="brand-pill"><span class="bdot" style="background:'+i.c+'"></span><span class="bnm">'+esc(nb)+' · '+esc(i.en)+'</span></span>'}
@@ -10910,26 +10920,25 @@ function srcListHTML(it){var list=[];if(it.source&&it.source.url)list.push(it.so
   if(Array.isArray(it.sources))it.sources.forEach(function(s){if(s&&s.url)list.push(s)});
   var seen={},uniq=[];list.forEach(function(s){if(!seen[s.url]){seen[s.url]=1;uniq.push(s)}});
   if(!uniq.length)return "";
-  var links=uniq.map(function(s){return '<a href="'+attr(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+' <span class="host">'+esc(hostOf(s.url))+'</span></a>'}).join("");
+  var links=uniq.map(function(s){return '<a href="'+attr(safeUrl(s.url))+'" target="_blank" rel="noopener">'+esc(s.name)+' <span class="host">'+esc(hostOf(s.url))+'</span></a>'}).join("");
   return '<div class="src-block"><span class="src-label">📎 消息源（'+uniq.length+'）</span><div class="src-list">'+links+'</div></div>'}
 function timelineHTML(it){if(!Array.isArray(it.timeline)||!it.timeline.length)return "";
   var items=it.timeline.map(function(e,i){
     var url=(e.source&&e.source.url)||(e.sources&&e.sources[0]&&e.sources[0].url)||"";
     var text=esc(e.text);
-    if(url) text='<a href="'+attr(url)+'" target="_blank" rel="noopener">'+text+'</a>';
+    if(url) text='<a href="'+attr(safeUrl(url))+'" target="_blank" rel="noopener">'+text+'</a>';
     return '<li><span class="tl-date">'+esc(fmtDate(e.date))+'</span><span class="tl-text">'+text+'</span></li>'}).join("");
   return '<div class="tl-block"><span class="tl-label">📈 事件时间线（'+it.timeline.length+' 个节点）</span><ul class="tl-list">'+items+'</ul></div>'}
 function priceRow(it){var parts=[];
   if(it.price&&it.price!=="—")parts.push('<span class="price">💰 '+esc(it.price)+'</span>');
-  if(it.buy&&it.buy.url)parts.push('<a class="buy" href="'+attr(it.buy.url)+'" target="_blank" rel="noopener">🛒 '+esc(it.buy.name)+'</a>');
+  if(it.buy&&it.buy.url)parts.push('<a class="buy" href="'+attr(safeUrl(it.buy.url))+'" target="_blank" rel="noopener">🛒 '+esc(it.buy.name)+'</a>');
   if(it.us){var us=[];
-    if(it.us.adorama&&it.us.adorama.url)us.push('<a class="buy us-adorama" href="'+attr(it.us.adorama.url)+'" target="_blank" rel="noopener">🇺🇸 Adorama '+(it.us.adorama.price?esc(it.us.adorama.price):'查看')+'</a>');
-    if(it.us.amazon&&it.us.amazon.url)us.push('<a class="buy us-amazon" href="'+attr(it.us.amazon.url)+'" target="_blank" rel="noopener">🇺🇸 Amazon 查看</a>');
+    if(it.us.adorama&&it.us.adorama.url)us.push('<a class="buy us-adorama" href="'+attr(safeUrl(it.us.adorama.url))+'" target="_blank" rel="noopener">🇺🇸 Adorama '+(it.us.adorama.price?esc(it.us.adorama.price):'查看')+'</a>');
+    if(it.us.amazon&&it.us.amazon.url)us.push('<a class="buy us-amazon" href="'+attr(safeUrl(it.us.amazon.url))+'" target="_blank" rel="noopener">🇺🇸 Amazon 查看</a>');
     if(us.length)parts.push('<span class="us-sep">美国</span>'+us.join(""));
   }
   if(!parts.length)return "";return '<div class="price-row">'+parts.join("")+'</div>'}
 // statColor 返回 token 类名，由 CSS 变量决定日/夜配色（避免 JS 硬编码色在暗色下失效）
-function statColorCls(s){return {announce:"t-announce",tease:"t-tease",rumor:"t-rumor"}[s]||"t-announce"}
 function statColor(s){return "var(--"+(s==="tease"?"t-tease":s==="rumor"?"t-rumor":"t-announce")+"-fg)"}
 
 var curType="all",curCat="all",kw="",sortDesc=true,curStage="all",curConf="all",curBrand="all",curBrandTag="all";
@@ -10978,6 +10987,10 @@ function renderFeed(){
     return true});
   arr.sort(function(a,b){var r;if(a.date!==b.date)r=a.date<b.date?1:-1;else r=(a.time||"")<(b.time||"")?1:-1;return sortDesc?r:-r});
   document.getElementById("total").textContent="共 "+arr.length+" 条";
+  if(!arr.length){
+    document.getElementById("feed").innerHTML='<div class="empty-state">🔍 未找到匹配项。 <button type="button" class="link-btn" id="empty-clear">清除筛选条件</button></div>';
+    return;
+  }
   var months={},order=[];
   arr.forEach(function(it){
     var m=(""+it.date).slice(0,7);
@@ -11287,10 +11300,9 @@ function renderMeta(){
   document.getElementById("upd2").textContent=u;
   var BD=(typeof BRANDS_DIR!=="undefined"?BRANDS_DIR:[]);
   var pend=BD.filter(function(b){return b.search});
-  if(document.getElementById("src-prose-n")) document.getElementById("src-prose-n").textContent=BD.length;
   var pb=document.getElementById("pending-banner");
   if(pend.length){pb.hidden=false;document.getElementById("pb-n").textContent=pend.length;
-    document.getElementById("pb-body").innerHTML=pend.map(function(b){return '<div class="pb-item"><span class="nm">'+esc(b.name)+'</span> · <a href="'+attr(b.official)+'" target="_blank" rel="noopener">🌐 查官网 →</a></div>'}).join("");
+    document.getElementById("pb-body").innerHTML=pend.map(function(b){return '<div class="pb-item"><span class="nm">'+esc(b.name)+'</span> · <a href="'+attr(safeUrl(b.official))+'" target="_blank" rel="noopener">🌐 查官网 →</a></div>'}).join("");
   }else{pb.hidden=true}
 }
 function renderWeekly(){
@@ -11323,7 +11335,7 @@ document.addEventListener("click",function(e){
     else{curBrandTag=k;curBrand="all";}
     syncUrl();renderChips();renderFeed();return;
   }
-  var clear=e.target.closest("#fclear");
+  var clear=e.target.closest("#fclear,#empty-clear");
   if(clear){
     curType="all";curStage="all";curConf="all";curBrand="all";curBrandTag="all";
     var q=document.getElementById("q"); if(q)q.value=""; kw="";
@@ -11355,7 +11367,7 @@ document.addEventListener("change",function(e){
   else if(e.target.id==="stage-sel"){curStage=e.target.value;syncUrl();renderChips();renderFeed();}
   else if(e.target.id==="conf-sel"){curConf=e.target.value;syncUrl();renderChips();renderFeed();}
 });
-document.getElementById("q").addEventListener("input",function(e){kw=e.target.value.trim().toLowerCase();renderFeed()});
+document.getElementById("q").addEventListener("input",debounce(function(e){kw=e.target.value.trim().toLowerCase();renderFeed()},250));
 /* 分段排序控件（替代原 sort-btn） */
 document.getElementById("sort-seg").addEventListener("click",function(e){
   var s=e.target.closest("span");if(!s)return;
@@ -11420,6 +11432,7 @@ var toTop=document.getElementById("toTop");
 toTop.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
 readUrl();
 if(typeof DATA!=="undefined")renderAll();
+})();
 </script>
 <div id="page-bottom"></div>
 </body>

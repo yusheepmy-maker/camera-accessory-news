@@ -50,6 +50,8 @@
   --flat:#8b847c;
   /* 重点信源条 */
   --src-key-bg:#e9f0ef; --src-key-line:#c9dcd9; --src-key-fg:#1f5252; --src-key-link:#2a6b6b;
+  /* 2026-08-02 按用户要求隐藏重点信源条卡片；恢复时移除本行即可 */
+  .src-key{display:none !important;}
 }
 [data-theme="dark"]{
   --bg:#141211; --bg-2:#1c1917;
@@ -420,7 +422,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <div class="wrap">
   <header class="top">
     <h1>📷 摄影器材配件新品收集</h1>
-    <span id="upd">更新于 2026-08-02 18:40</span>
+    <span id="upd">更新于 2026-08-02 18:53</span>
     <div class="tools">
       <button id="share-btn" type="button">🔗 分享</button>
       <button id="theme-btn" type="button">🌓 主题</button>
@@ -432,7 +434,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
     <span class="nav-anchor" data-target="sec-dir">🏭 厂商 <span class="n" id="nav-n-dir">0</span></span>
     <span class="nav-anchor" data-target="sec-rep">📊 财报 <span class="n" id="nav-n-rep">0</span></span>
   </nav>
-  <div class="subtitle">监控 <b id="src-prose-n">103</b> 家厂商官网 + 微信公众号 / 微博相机圈 / 小红书 / 中英文行业媒体 / 评测流言站 / CameraHot / Kickstarter 众筹，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-02 18:40</b>。</div>
+  <div class="subtitle">监控 <b id="src-prose-n">103</b> 家厂商官网 + 微信公众号 / 微博相机圈 / 小红书 / 中英文行业媒体 / 评测流言站 / CameraHot / Kickstarter 众筹，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-02 18:53</b>。</div>
   <div class="weekly" id="weekly" aria-label="本周速览" aria-live="polite"></div>
   <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源） · <a href="https://camcat.net/" target="_blank" rel="noopener">CameraHot</a>（camcat.net，爆料时间线聚合）</div>
 
@@ -466,7 +468,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <a id="toBottom" href="#page-bottom" title="直达底部">↓</a>
 
 <script>
-const UPDATED = "2026-08-02 18:40";
+const UPDATED = "2026-08-02 18:53";
 
 const HOT = [
   {

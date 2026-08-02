@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
 <title>摄影器材配件新品收集</title>
 <style>
 
@@ -50,9 +51,9 @@
   --flat:#8b847c;
   /* 重点信源条 */
   --src-key-bg:#e9f0ef; --src-key-line:#c9dcd9; --src-key-fg:#1f5252; --src-key-link:#2a6b6b;
-  /* 2026-08-02 按用户要求隐藏重点信源条卡片；恢复时移除本行即可 */
-  .src-key{display:none !important;}
 }
+/* 2026-08-02 按用户要求隐藏重点信源条卡片；恢复时移除本规则即可 */
+.src-key{display:none !important;}
 [data-theme="dark"]{
   --bg:#141211; --bg-2:#1c1917;
   --card:#1f1c1a; --card-2:#282522;
@@ -431,7 +432,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <div class="wrap">
   <header class="top">
     <h1>📷 摄影器材配件新品收集</h1>
-    <span id="upd">更新于 2026-08-03 01:52</span>
+    <span id="upd">更新于 2026-08-03 02:06</span>
     <div class="tools">
       <button id="share-btn" type="button">🔗 分享</button>
       <button id="theme-btn" type="button">🌓 主题</button>
@@ -443,7 +444,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
     <span class="nav-anchor" data-target="sec-dir">🏭 厂商 <span class="n" id="nav-n-dir">0</span></span>
     <span class="nav-anchor" data-target="sec-rep">📊 财报 <span class="n" id="nav-n-rep">0</span></span>
   </nav>
-  <div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-03 01:52</b>。</div>
+  <div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-03 02:06</b>。</div>
   <div class="weekly" id="weekly" aria-label="本周速览" aria-live="polite"></div>
   <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源） · <a href="https://camcat.net/" target="_blank" rel="noopener">CameraHot</a>（camcat.net，爆料时间线聚合）</div>
 
@@ -482,7 +483,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <a id="toBottom" href="#page-bottom" title="直达底部">↓</a>
 
 <script>
-const UPDATED = "2026-08-03 01:52";
+const UPDATED = "2026-08-03 02:06";
 
 const HOT = [
   {
@@ -11388,7 +11389,7 @@ function brandPill(b){var nb=normBrand(b);var i=BRANDS[nb]||{en:(nb||"?").toUppe
 function typeTag(t){var T=TYPES[t]||TYPES.news;return '<span class="tag '+T.cls+'">'+T.label+'</span>'}
 function stageChipOf(it){var s=it.stage||STAGE_DEFAULT[it.type]||"official";var S=STAGES[s]||STAGES.official;return '<span class="stage '+S.cls+'">'+S.label+'</span>'}
 function confBadgeOf(it){var c=(typeof it.confidence==="number")?it.confidence:confidenceOf(it);var lvl=c>=85?"c-high":c>=70?"c-mid":"c-low";return '<span class="conf '+lvl+'" title="可信度评分 '+c+'/100">可信度 '+c+'</span>'}
-function srcLine(s){if(!s||!s.url)return "";return '<div class="src">🔗 来源：<a href="'+attr(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a></div>'}
+function srcLine(s){if(!s||!s.url)return "";return '<div class="src">🔗 来源：<a href="'+attr(safeUrl(s.url))+'" target="_blank" rel="noopener">'+esc(s.name)+'</a></div>'}
 function srcListHTML(it){var list=[];if(it.source&&it.source.url)list.push(it.source);
   if(Array.isArray(it.sources))it.sources.forEach(function(s){if(s&&s.url)list.push(s)});
   var seen={},uniq=[];list.forEach(function(s){if(!seen[s.url]){seen[s.url]=1;uniq.push(s)}});
@@ -11449,7 +11450,12 @@ function itemHtml(it){
   return '<div class="'+cls+'"><div class="meta"><span class="time">'+esc(it.time||"")+'</span>'+typeTag(it.type)+brandPill(it.brand)+stageChipOf(it)+confBadgeOf(it)+'</div><h4>'+esc(it.title)+'</h4><p>'+esc(it.desc)+'</p>'+timelineHTML(it)+priceRow(it)+srcListHTML(it)+'</div>';
 }
 function monthLabel(m){var p=(""+m).split("-");return p[0]+"年"+parseInt(p[1],10)+"月";}
-function renderFeed(){
+// renderFeed 签名缓存：筛选条件/关键字/排序未变化时跳过重绘（降低重复 innerHTML 重排成本）
+var _feedSig="",_feedCache="";
+function renderFeed(force){
+  var sig=[curType,curStage,curConf,curBrand,kw,sortDesc].join("|");
+  if(!force&&sig===_feedSig&&_feedCache!==""){return;}
+  _feedSig=sig;
   var arr=(typeof DATA!=="undefined"?DATA:[]).slice().filter(function(it){
     var nb=normBrand(it.brand);
     if(curType!=="all"&&it.type!==curType)return false;
@@ -11484,6 +11490,7 @@ function renderFeed(){
       '<summary class="month-head"><span class="m">'+esc(mo.label)+'</span><span class="m-cnt">'+total+' 条</span></summary>'+
       daysHtml+'</details>';
   }).join("");
+  _feedCache=document.getElementById("feed").innerHTML;
 }
 /* 配件厂商按 sub 标签直接拆开为独立标签页；同一官网（如 Peak Design）重复条目合并并优先取有 sub 的 */
 function accBrandSub(b){
@@ -11529,15 +11536,19 @@ function dirGroups(cat){
   }
   return groups;
 }
-function renderDir(){
+var _dirSig="",_dirCache="";
+function renderDir(force){
+  if(!force&&curCat===_dirSig&&_dirCache!==""){return;}
+  _dirSig=curCat;
   var BD=(typeof BRANDS_DIR!=="undefined"?BRANDS_DIR:[]);
   document.getElementById("dir-total").textContent="共 "+BD.length+" 家";
   var groups=dirGroups(curCat);
   document.getElementById("dir").innerHTML=groups.map(function(g){
     return '<div class="dir-group"><h3>'+esc(g.label)+'<span class="n">'+g.list.length+'</span></h3><div class="dir-grid">'+
-      g.list.map(function(b){return '<div class="dir-card"><a class="nm" href="'+attr(b.official)+'" target="_blank" rel="noopener">'+esc(b.name)+(b.search?'<span class="flag">待核实</span>':'')+'</a><span class="en">'+esc(b.en)+'</span>'+ccdBadges(b)+akaHtml(b)+((b.desc)?'<div class="dir-desc">'+esc(b.desc)+'</div>':'')+'<span class="go-row"><a class="go" href="'+attr(b.official)+'" target="_blank" rel="noopener">🌐 官网</a>'+((b.global&&b.global!==b.official)?'<a class="go go-global" href="'+attr(b.global)+'" target="_blank" rel="noopener">🌍 全球官网</a>':'')+'</span>'+socialHtml(b)+'</div>'}).join("")+
+      g.list.map(function(b){return '<div class="dir-card"><a class="nm" href="'+attr(safeUrl(b.official))+'" target="_blank" rel="noopener">'+esc(b.name)+(b.search?'<span class="flag">待核实</span>':'')+'</a><span class="en">'+esc(b.en)+'</span>'+ccdBadges(b)+akaHtml(b)+((b.desc)?'<div class="dir-desc">'+esc(b.desc)+'</div>':'')+'<span class="go-row"><a class="go" href="'+attr(safeUrl(b.official))+'" target="_blank" rel="noopener">🌐 官网</a>'+((b.global&&b.global!==b.official)?'<a class="go go-global" href="'+attr(safeUrl(b.global))+'" target="_blank" rel="noopener">🌍 全球官网</a>':'')+'</span>'+socialHtml(b)+'</div>'}).join("")+
       '</div></div>';
   }).join("");
+  _dirCache=document.getElementById("dir").innerHTML;
 }
 function yoyCls(v){if(!v||v==="—"||v==="-")return "y-flat";if(v.charAt(0)==="+")return "y-up";if(v.charAt(0)==="-")return "y-down";return "y-flat"}
 function renderReports(){
@@ -11567,8 +11578,8 @@ function renderReportCard(r, history){
   var L=(r.labels&&r.labels.length===3)?r.labels:["营收","营业利润","净利润"];
   var seg=r.segment?'<div class="rep-seg">📦 <b>'+esc(r.segment.name)+'</b>：'+esc(r.segment.revenue||"—")+(r.segment.opProfit?(' · '+esc(r.segment.opLabel||"营业利润")+' '+esc(r.segment.opProfit)):"")+(r.segment.note?(' · '+esc(r.segment.note)):"")+'</div>':"";
   var links="";
-  if(r.source&&r.source.url)links+='<a href="'+attr(r.source.url)+'" target="_blank" rel="noopener">🔗 '+esc(r.source.name||"来源")+'</a>';
-  if(r.pdf&&r.pdf.url)links+='<a href="'+attr(r.pdf.url)+'" target="_blank" rel="noopener">📄 '+esc(r.pdf.name||"年报")+'</a>';
+  if(r.source&&r.source.url)links+='<a href="'+attr(safeUrl(r.source.url))+'" target="_blank" rel="noopener">🔗 '+esc(r.source.name||"来源")+'</a>';
+  if(r.pdf&&r.pdf.url)links+='<a href="'+attr(safeUrl(r.pdf.url))+'" target="_blank" rel="noopener">📄 '+esc(r.pdf.name||"年报")+'</a>';
   var periodLabel=periodLabelOf(r);
   var histHtml=renderHistoryTimeline(history);
   var nextHtml=renderNextReport(r);
@@ -11681,7 +11692,7 @@ function renderHistoryTimeline(history){
     var rev=r.revenue?'<span class="rep-hl-rev">'+esc(r.revenue)+'</span>':'<span class="rep-hl-rev muted">—</span>';
     var yoy=r.revenueYoY?'<span class="rep-hl-yoy '+yoyCls(r.revenueYoY)+'">'+esc(r.revenueYoY)+'</span>':"";
     var net=r.netIncome?'<span class="rep-hl-net">'+esc(r.netIncome)+'</span>':'<span class="rep-hl-net muted">—</span>';
-    var src=(r.source&&r.source.url)?('<a href="'+attr(r.source.url)+'" target="_blank" rel="noopener" class="rep-hl-src" title="'+esc(r.source.name||"来源")+'">🔗</a>'):"";
+    var src=(r.source&&r.source.url)?('<a href="'+attr(safeUrl(r.source.url))+'" target="_blank" rel="noopener" class="rep-hl-src" title="'+esc(r.source.name||"来源")+'">🔗</a>'):"";
     return '<li class="rep-hl-item">'+
       '<span class="rep-hl-date">'+esc(r.reportDate||"—")+'</span>'+
       '<span class="rep-hl-period">'+esc(label)+'</span>'+

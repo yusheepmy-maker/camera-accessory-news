@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" id="meta-theme" content="#f6f4f0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-qc/d4VHnh0l31W4SuHagiA=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-CbsIZVp1T4nhHN4+Vwvlww=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
 <title>摄影器材配件新品收集</title>
 <style>
 
@@ -171,7 +171,7 @@ h2.sec .mini{font-size:12px;font-weight:500;color:var(--ink3);background:var(--c
 
 /* 搜索/筛选 */
 .ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
-#q{flex:1;min-width:220px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 14px;font-size:13px;outline:none;transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
+#q{flex:1;min-width:160px;max-width:480px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 14px;font-size:13px;outline:none;transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
 #q:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-size:12px;padding:5px 12px;border-radius:999px;background:var(--chipbg);color:var(--ink2);cursor:pointer;user-select:none;font-weight:500;transition:all var(--transition-fast)}
@@ -181,7 +181,7 @@ h2.sec .mini{font-size:12px;font-weight:500;color:var(--ink3);background:var(--c
 #total{font-size:12px;color:var(--ink3);font-weight:500}
 
 /* 分段排序 */
-.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--card)}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--card);flex-shrink:0}
 .seg span{font-size:12px;font-weight:500;padding:7px 14px;color:var(--ink2);cursor:pointer;user-select:none;border-right:1px solid var(--line);transition:all var(--transition-fast)}
 .seg span:last-child{border-right:none}
 .seg span.on{background:var(--accent);color:#fff}
@@ -469,7 +469,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 /* ① 阅读进度条 */
 #progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--accent);z-index:70;transition:width .08s linear}
 /* ② 紧凑控件吸顶（搜索+排序），并顺移月份头避免重叠 */
-.ctrl{position:sticky;top:64px;z-index:37;background:var(--bg);padding:10px 0;margin-bottom:8px}
+.ctrl{position:sticky;top:64px;z-index:37;background:var(--bg);padding:10px 0;margin-bottom:8px;gap:8px}
 .month-head{top:116px}
 /* ④ 双栏密度 */
 .day .feed.dense{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -481,8 +481,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 .mr-item:hover{background:var(--chipbg)}
 .mr-item.on{background:var(--accent-soft);color:var(--accent-ink);font-weight:700}
 .mr-item .cnt{color:var(--ink3);font-size:11px}
-.density-btn{margin-left:auto;border:1px solid var(--line-2);background:var(--card);color:var(--ink2);font-size:12px;font-weight:600;padding:7px 14px;border-radius:10px;cursor:pointer;transition:border-color var(--transition-fast),color var(--transition-fast),background var(--transition-fast)}
-.density-btn:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+.density-btn{border:1px solid var(--line-2);background:var(--card);color:var(--ink2);font-size:12px;font-weight:600;padding:7px 14px;border-radius:10px;cursor:pointer;transition:border-color var(--transition-fast),color var(--transition-fast),background var(--transition-fast);white-space:nowrap;flex-shrink:0}
+.density-btn:hover,.density-btn.on{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
 /* ③ NEW 入场动效（仅首屏加载触发；基础态不隐藏，reduced-motion 下全局规则关闭动画，无不可见风险） */
 @keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .item.new-anim.in{animation:cardIn .5s ease both}
@@ -496,7 +496,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <div class="wrap">
   <header class="top">
     <h1>📷 摄影器材配件新品收集</h1>
-    <span id="upd">更新于 2026-08-12 17:53</span>
+    <span id="upd">更新于 2026-08-12 18:04</span>
     <div class="tools">
       <button id="share-btn" type="button">🔗 分享</button>
       <button id="theme-btn" type="button">🌓 主题</button>
@@ -508,7 +508,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
     <span class="nav-anchor" data-target="sec-dir">🏭 厂商 <span class="n" id="nav-n-dir">0</span></span>
     <span class="nav-anchor" data-target="sec-rep">📊 财报 <span class="n" id="nav-n-rep">0</span></span>
   </nav>
-  <div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-12 17:53</b>。</div>
+  <div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-12 18:04</b>。</div>
   <div class="weekly" id="weekly" aria-label="本周速览" aria-live="polite"></div>
   <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源） · <a href="https://camcat.net/" target="_blank" rel="noopener">CameraHot</a>（camcat.net，爆料时间线聚合）</div>
 
@@ -553,8 +553,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 <button id="toTop" type="button" title="回到顶部">↑</button>
 <a id="toBottom" href="#page-bottom" title="直达底部">↓</a>
 
-<script nonce="qc/d4VHnh0l31W4SuHagiA==">
-const UPDATED = "2026-08-12 17:53";
+<script nonce="CbsIZVp1T4nhHN4+Vwvlww==">
+const UPDATED = "2026-08-12 18:04";
 
 const HOT = [
   {
@@ -14392,7 +14392,7 @@ const REPORTS = [
 ];
 
 </script>
-<script nonce="qc/d4VHnh0l31W4SuHagiA==">
+<script nonce="CbsIZVp1T4nhHN4+Vwvlww==">
 // lib/confidence.js — 可信度域名分类与 confidenceOf 计算（浏览器 + node 共用）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 CONF_*/hostOf/confidenceOf；node 端 require 拿 module.exports。
 //
@@ -14504,7 +14504,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="qc/d4VHnh0l31W4SuHagiA==">
+<script nonce="CbsIZVp1T4nhHN4+Vwvlww==">
 // lib/brand_meta.js — 品牌元信息（颜色 + 英文名 + BRANDS 索引构建）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 BRANDS_DECOR/buildBrandsMap；node 端 require 拿 module.exports。
 //
@@ -14584,8 +14584,8 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="qc/d4VHnh0l31W4SuHagiA==">var BRANDS = buildBrandsMap(BRANDS_DIR);</script>
-<script nonce="qc/d4VHnh0l31W4SuHagiA==">
+<script nonce="CbsIZVp1T4nhHN4+Vwvlww==">var BRANDS = buildBrandsMap(BRANDS_DIR);</script>
+<script nonce="CbsIZVp1T4nhHN4+Vwvlww==">
 (function(){
 /* ================= 渲染逻辑（与 build_standalone.js 预渲染保持一致） ================= */
 var TYPES={announce:{label:"官宣",cls:"t-announce"},tease:{label:"预热",cls:"t-tease"},release:{label:"发布",cls:"t-release"},presale:{label:"预售",cls:"t-presale"},rumor:{label:"爆料",cls:"t-rumor"},cert:{label:"认证",cls:"t-cert"},sale:{label:"开售",cls:"t-sale"},fw:{label:"固件",cls:"t-fw"},news:{label:"动态",cls:"t-news"},leak:{label:"泄漏",cls:"t-leak"},stop:{label:"停产",cls:"t-stop"}};
@@ -14633,7 +14633,7 @@ function ccdPlaceholderTag(b){
 }
 /* 目录卡片：子类型 chip + 占位 flag 已去掉，保持兴趣相机卡片简洁 */
 function normBrand(b){return BRAND_ALIASES[b]||CCD_ALIASES[b]||b||"?"}
-/* BRANDS 由 lib/brand_meta.js 加载后调 buildBrandsMap(BRANDS_DIR) 动态生成（确保与 data.js 同步），见下方 4 个 <script nonce="qc/d4VHnh0l31W4SuHagiA=="> 加载顺序。颜色装饰见 lib/brand_meta.js 内 BRANDS_DECOR。 */
+/* BRANDS 由 lib/brand_meta.js 加载后调 buildBrandsMap(BRANDS_DIR) 动态生成（确保与 data.js 同步），见下方 4 个 <script nonce="CbsIZVp1T4nhHN4+Vwvlww=="> 加载顺序。颜色装饰见 lib/brand_meta.js 内 BRANDS_DECOR。 */
 var STAGES={rumor:{label:"传闻",cls:"s-rumor"},leak:{label:"爆料",cls:"s-leak"},tease:{label:"预热",cls:"s-tease"},official:{label:"官宣",cls:"s-official"},presale:{label:"预售",cls:"s-presale"},onsale:{label:"上市",cls:"s-onsale"}};
 var STAGE_DEFAULT={rumor:"rumor",leak:"leak",tease:"tease",announce:"official",release:"official",cert:"official",fw:"official",news:"official",presale:"presale",sale:"onsale",stop:"onsale"};
 /* CONF_OFFICIAL/CONF_MEDIA/CONF_BLOG/CONF_RUMOR/CONF_FEATURED/CONF_TIMELINE、hostOf、confidenceOf 均由 lib/confidence.js 加载后挂 globalThis。严格匹配（2026-07-28 P1 修复）替代原 indexOf 子串匹配，避免子域名误判。 */
@@ -15298,6 +15298,13 @@ var sortSeg=document.getElementById("sort-seg"); if(sortSeg)sortSeg.addEventList
   var s=e.target.closest("span");if(!s)return;
   sortDesc=s.dataset.desc==="1";
   this.querySelectorAll("span").forEach(function(x){x.classList.toggle("on",x===s)});
+  renderTimeline();
+});
+/* 双栏密度切换 */
+var densityBtn=document.getElementById("density-btn"); if(densityBtn)densityBtn.addEventListener("click",function(){
+  denseMode=!denseMode;
+  this.textContent=(denseMode?"☰ 单栏":"☰ 双栏");
+  this.classList.toggle("on",denseMode);
   renderTimeline();
 });
 /* 厂商目录可折叠：点击标题展开/收起 */

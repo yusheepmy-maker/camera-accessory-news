@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" id="meta-theme" content="#f6f4f0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-bIwGSaQpnGaCyg1cOYvYrQ=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-G2RKFyV0+ZYF8P20NNBdNw=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
 <title>摄影器材配件新品收集</title>
 <style>
 :root{
@@ -360,11 +360,11 @@ a.dir-card:hover{border-color:var(--accent); transform:translateY(-1px)}
 /* ===== 用户复盘新增要求（2026-08-13） ===== */
 /* 1. 财报卡强制单列（不论窗口宽度） */
 .rep-grid{grid-template-columns:1fr !important}
-/* 2. 品牌名永远独占第一行，频道导航+搜索+主题钮第二行 */
+/* 2. 品牌名永远独占第一行，频道导航+搜索+主题钮第二行；频道导航居中 */
 .topbar{flex-wrap:wrap}
 .brand{flex:0 0 100%; max-width:100%}
-.navbar{margin-left:0}
-.search-box{margin-left:auto}
+.navbar{margin:0 auto}
+.search-box{margin-left:0}
 .theme-toggle{margin-left:0}
 /* 3. 阅读进度条（恢复 Phase 3-4 能力） */
 #progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--accent);z-index:70;transition:width .08s linear}
@@ -387,10 +387,10 @@ a.dir-card:hover{border-color:var(--accent); transform:translateY(-1px)}
 </header>
 
 <!-- verify_page 守卫锚点（视觉隐藏，与原型一致） -->
-<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-13 15:01</b>。</div>
+<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-08-13 15:08</b>。</div>
 <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源） · <a href="https://camcat.net/" target="_blank" rel="noopener">CameraHot</a>（camcat.net，爆料时间线聚合）</div>
 <div id="pending-banner" hidden></div>
-<span id="upd" hidden>更新于 2026-08-13 15:01</span>
+<span id="upd" hidden>更新于 2026-08-13 15:08</span>
 
 <main>
   <section class="view active" id="view-home">
@@ -428,8 +428,8 @@ a.dir-card:hover{border-color:var(--accent); transform:translateY(-1px)}
   </section>
 </main>
 
-<script nonce="bIwGSaQpnGaCyg1cOYvYrQ==">
-const UPDATED = "2026-08-13 15:01";
+<script nonce="G2RKFyV0+ZYF8P20NNBdNw==">
+const UPDATED = "2026-08-13 15:08";
 
 const HOT = [
   {
@@ -14209,7 +14209,7 @@ const REPORTS = [
 ];
 
 </script>
-<script nonce="bIwGSaQpnGaCyg1cOYvYrQ==">
+<script nonce="G2RKFyV0+ZYF8P20NNBdNw==">
 // lib/confidence.js — 可信度域名分类与 confidenceOf 计算（浏览器 + node 共用）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 CONF_*/hostOf/confidenceOf；node 端 require 拿 module.exports。
 //
@@ -14321,7 +14321,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="bIwGSaQpnGaCyg1cOYvYrQ==">
+<script nonce="G2RKFyV0+ZYF8P20NNBdNw==">
 // lib/brand_meta.js — 品牌元信息（颜色 + 英文名 + BRANDS 索引构建）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 BRANDS_DECOR/buildBrandsMap；node 端 require 拿 module.exports。
 //
@@ -14401,8 +14401,8 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="bIwGSaQpnGaCyg1cOYvYrQ==">var BRANDS = buildBrandsMap(BRANDS_DIR);</script>
-<script nonce="bIwGSaQpnGaCyg1cOYvYrQ==">
+<script nonce="G2RKFyV0+ZYF8P20NNBdNw==">var BRANDS = buildBrandsMap(BRANDS_DIR);</script>
+<script nonce="G2RKFyV0+ZYF8P20NNBdNw==">
 (function(){
 document.body.classList.add("js"); // 五频道路由：JS 接管后隐藏非激活视图（无 JS 时全视图可见作降级）
 /* ================= 渲染逻辑（与 build_standalone.js 预渲染保持一致） ================= */
@@ -14451,7 +14451,7 @@ function ccdPlaceholderTag(b){
 }
 /* 目录卡片：子类型 chip + 占位 flag 已去掉，保持兴趣相机卡片简洁 */
 function normBrand(b){return BRAND_ALIASES[b]||CCD_ALIASES[b]||b||"?"}
-/* BRANDS 由 lib/brand_meta.js 加载后调 buildBrandsMap(BRANDS_DIR) 动态生成（确保与 data.js 同步），见下方 4 个 <script nonce="bIwGSaQpnGaCyg1cOYvYrQ=="> 加载顺序。颜色装饰见 lib/brand_meta.js 内 BRANDS_DECOR。 */
+/* BRANDS 由 lib/brand_meta.js 加载后调 buildBrandsMap(BRANDS_DIR) 动态生成（确保与 data.js 同步），见下方 4 个 <script nonce="G2RKFyV0+ZYF8P20NNBdNw=="> 加载顺序。颜色装饰见 lib/brand_meta.js 内 BRANDS_DECOR。 */
 var STAGES={rumor:{label:"传闻",cls:"s-rumor"},leak:{label:"爆料",cls:"s-leak"},tease:{label:"预热",cls:"s-tease"},official:{label:"官宣",cls:"s-official"},presale:{label:"预售",cls:"s-presale"},onsale:{label:"上市",cls:"s-onsale"}};
 var STAGE_DEFAULT={rumor:"rumor",leak:"leak",tease:"tease",announce:"official",release:"official",cert:"official",fw:"official",news:"official",presale:"presale",sale:"onsale",stop:"onsale"};
 /* CONF_OFFICIAL/CONF_MEDIA/CONF_BLOG/CONF_RUMOR/CONF_FEATURED/CONF_TIMELINE、hostOf、confidenceOf 均由 lib/confidence.js 加载后挂 globalThis。严格匹配（2026-07-28 P1 修复）替代原 indexOf 子串匹配，避免子域名误判。 */

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" id="meta-theme" content="#F2EFE6">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-uZhx7vTbsSH3bVFQmGwHGA=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-0KqgG9KGDUWKx/PSS/Gm1A=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
 <title>摄影器材配件新品收集</title>
 <style>
 :root{
@@ -57,7 +57,7 @@ body.js .view.active{display:block}
 .view.active{display:block}
 /* ---------- layout ---------- */
 .cols{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:clamp(22px,3vw,52px)}
-@media(max-width:920px){.cols{grid-template-columns:1fr} .side{order:-1}}
+@media(max-width:920px){.cols{grid-template-columns:1fr}}
 /* ---------- hero ---------- */
 .kicker{font-family:var(--mont);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:12px;margin:0 0 16px}
 .kicker::before{content:"";width:36px;height:2px;background:var(--accent)}
@@ -132,7 +132,8 @@ body.js .view.active{display:block}
 .tl-text{color:var(--charcoal)}
 .tl-text a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 /* ---------- sidebar ---------- */
-.side{position:sticky;top:70px;align-self:start;display:flex;flex-direction:column;gap:26px}
+.side{align-self:start;display:flex;flex-direction:column;gap:26px}
+@media(min-width:921px){.side{position:sticky;top:70px}}
 .sblock{border-top:2px solid var(--ink);padding-top:12px}
 .sblock h4{font-family:var(--mont);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
 .mon-nav a{display:flex;justify-content:space-between;font-size:14px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink)}
@@ -310,10 +311,10 @@ body.js .view.active{display:block}
 <div id="progress" aria-hidden="true"></div>
 
 <!-- verify_page 守卫锚点（视觉隐藏，结构与线上一致；缺失会导致 release 阻断） -->
-<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-10-16 02:55</b>。</div>
+<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-10-16 03:29</b>。</div>
 <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源）</div>
 <div id="pending-banner" hidden><b id="pb-n">0</b> 家厂商官网待核实，点此展开查看<div id="pb-body" hidden></div></div>
-<span id="upd" hidden>更新于 2026-10-16 02:55</span>
+<span id="upd" hidden>更新于 2026-10-16 03:29</span>
 
 <header class="masthead">
   <div class="mast-inner">
@@ -360,7 +361,7 @@ body.js .view.active{display:block}
             <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>
             <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>
           </div></div>
-          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-10-16 02:55</b><br>窗口内 <b>556</b> 条 · 目录 <b>173</b> 家 · 信源站点 <b>407</b> 个<br>窗口 2026-07 ~ 2026-10（4 个月）</div></div>
+          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-10-16 03:29</b><br>窗口内 <b>556</b> 条 · 目录 <b>173</b> 家 · 信源站点 <b>407</b> 个<br>窗口 2026-07 ~ 2026-10（4 个月）</div></div>
         </div>
       </div>
     </div>
@@ -392,12 +393,12 @@ body.js .view.active{display:block}
 
 <footer class="foot">
   <div class="fn">摄影器材配件新品收集</div>
-  <div>数据更新于 <b id="upd3">2026-10-16 02:55</b> · 每周五自动巡检更新。</div>
+  <div>数据更新于 <b id="upd3">2026-10-16 03:29</b> · 每周五自动巡检更新。</div>
   <div style="margin-top:8px;color:#8fa097">数据每周五自动巡检更新，实时读取 data.js，未添加或改动任何条目。</div>
 </footer>
 
-<script nonce="uZhx7vTbsSH3bVFQmGwHGA==">
-const UPDATED = "2026-10-16 02:55";
+<script nonce="0KqgG9KGDUWKx/PSS/Gm1A==">
+const UPDATED = "2026-10-16 03:29";
 
 const HOT = [
   {
@@ -28525,7 +28526,7 @@ const REPORTS = [
 ];
 
 </script>
-<script nonce="uZhx7vTbsSH3bVFQmGwHGA==">
+<script nonce="0KqgG9KGDUWKx/PSS/Gm1A==">
 // lib/confidence.js — 可信度域名分类与 confidenceOf 计算（浏览器 + node 共用）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 CONF_*/hostOf/confidenceOf；node 端 require 拿 module.exports。
 //
@@ -28808,7 +28809,7 @@ const REPORTS = [
     if (_brandsHosts) return _brandsHosts;
     var list = _brandsInjected;
     if (!list) {
-      // 浏览器端：data.js 以 <script nonce="uZhx7vTbsSH3bVFQmGwHGA=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
+      // 浏览器端：data.js 以 <script nonce="0KqgG9KGDUWKx/PSS/Gm1A=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
       try { if (typeof BRANDS_DIR !== "undefined" && BRANDS_DIR) list = BRANDS_DIR; } catch (e) { list = null; }
       if (!list && typeof globalThis !== "undefined" && globalThis.BRANDS_DIR) list = globalThis.BRANDS_DIR;
     }
@@ -28894,7 +28895,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="uZhx7vTbsSH3bVFQmGwHGA==">
+<script nonce="0KqgG9KGDUWKx/PSS/Gm1A==">
 // lib/brand_meta.js — 品牌元信息（颜色 + 英文名 + BRANDS 索引构建）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 BRANDS_DECOR/buildBrandsMap；node 端 require 拿 module.exports。
 //
@@ -28974,7 +28975,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="uZhx7vTbsSH3bVFQmGwHGA==">
+<script nonce="0KqgG9KGDUWKx/PSS/Gm1A==">
 // lib/fx.js — 财报数值「显示层」换算：原币 → 人民币（data.js 数据不动，仅展示换算）
 //
 // 单一真源：汇率表 + 解析/换算逻辑。index.html（浏览器交互版）与 scripts/build_standalone.js
@@ -29178,7 +29179,7 @@ const REPORTS = [
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();
 </script>
-<script nonce="uZhx7vTbsSH3bVFQmGwHGA==">
+<script nonce="0KqgG9KGDUWKx/PSS/Gm1A==">
 (function(){
 document.body.classList.add("js");
 

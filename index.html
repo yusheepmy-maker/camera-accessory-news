@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" id="meta-theme" content="#F2EFE6">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-poOaA6RcMTvYiys6fdBtJQ=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
-<script nonce="poOaA6RcMTvYiys6fdBtJQ==">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-lIRiZ57sMWBhbANyhq8lrg=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
 /* WEB-24（2026-11-14）：主题必须在首帧前定。原实现只在文档末尾的内联 IIFE 里调 applyTheme，
    实测 deploy/index.html 中该脚本起始于第 3,191,118 / 3,232,185 字节（98.7%），
    深色偏好用户要等整篇文档解析完才翻转 → 首屏整页浅色闪烁。
    此处提前读同一份 localStorage 键（cam-theme）与系统偏好，只做属性设置，不依赖任何库。
-   必须写成无属性的裸 <script nonce="poOaA6RcMTvYiys6fdBtJQ==">：build_standalone 的 CSP nonce 重写只匹配 <script nonce="poOaA6RcMTvYiys6fdBtJQ==">，
+   必须写成无属性的裸 <script nonce="lIRiZ57sMWBhbANyhq8lrg==">：build_standalone 的 CSP nonce 重写只匹配 <script nonce="lIRiZ57sMWBhbANyhq8lrg==">，
    带属性会被漏加 nonce，随后被 CSP 静默拦下（且构建断言会直接失败）。 */
 (function(){try{
   var t=localStorage.getItem("cam-theme");
@@ -314,6 +314,10 @@ body.js .view.active{display:block}
   .filterbar input{flex:1 1 100%;min-width:100%}
   .filterbar select{flex:1 1 40%;min-width:120px}
   .filterbar .fcount{width:100%;margin-left:0;margin-top:4px}
+  /* WEB-30（2026-11-15）：≤640px 时筛选栏吸顶叠成四行（频道+搜索+品牌+计数 ≈170px，约 1/4 竖屏
+     视口），而 .month 的 scroll-margin-top 恒为 64px（桌面单行栏 ≈57px 的余量）。结果是从时间索引
+     跳到月份时标题仍被吸顶栏盖住。此处按移动端实际栏高预留锚点空间。 */
+  .month,.month-h{scroll-margin-top:176px}
   .hero-lead{min-height:auto}
   .item{padding:14px}
   .tl-list li{grid-template-columns:66px 1fr;gap:8px}
@@ -326,10 +330,10 @@ body.js .view.active{display:block}
 <div id="progress" aria-hidden="true"></div>
 
 <!-- verify_page 守卫锚点（视觉隐藏，结构与线上一致；缺失会导致 release 阻断） -->
-<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-15 00:25</b>。</div>
+<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-15 00:47</b>。</div>
 <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源）</div>
 <div id="pending-banner" hidden role="button" tabindex="0" aria-expanded="false"><b id="pb-n">0</b> 家厂商官网待核实，点此展开查看<div id="pb-body" hidden></div></div>
-<span id="upd" hidden>更新于 2026-11-15 00:25</span>
+<span id="upd" hidden>更新于 2026-11-15 00:47</span>
 
 <header class="masthead">
   <div class="mast-inner">
@@ -376,7 +380,7 @@ body.js .view.active{display:block}
             <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>
             <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>
           </div></div>
-          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-15 00:25</b><br>窗口内 <b>516</b> 条 · 目录 <b>185</b> 家 · 信源站点 <b>442</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
+          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-15 00:47</b><br>窗口内 <b>516</b> 条 · 目录 <b>185</b> 家 · 信源站点 <b>442</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
         </div>
       </div>
     </div>
@@ -408,12 +412,12 @@ body.js .view.active{display:block}
 
 <footer class="foot">
   <div class="fn">摄影器材配件新品收集</div>
-  <div>数据更新于 <b id="upd3">2026-11-15 00:25</b> · 每周五自动巡检更新。</div>
+  <div>数据更新于 <b id="upd3">2026-11-15 00:47</b> · 每周五自动巡检更新。</div>
   <div style="margin-top:8px;color:#8fa097">数据每周五自动巡检更新，实时读取 data.js，未添加或改动任何条目。</div>
 </footer>
 
-<script nonce="poOaA6RcMTvYiys6fdBtJQ==">
-const UPDATED = "2026-11-15 00:25";
+<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
+const UPDATED = "2026-11-15 00:47";
 
 const HOT = [
   {
@@ -32715,7 +32719,7 @@ const REPORTS = [
 ];
 
 </script>
-<script nonce="poOaA6RcMTvYiys6fdBtJQ==">
+<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
 // lib/confidence.js — 可信度域名分类与 confidenceOf 计算（浏览器 + node 共用）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 CONF_*/hostOf/confidenceOf；node 端 require 拿 module.exports。
 //
@@ -33014,7 +33018,7 @@ const REPORTS = [
     if (_brandsHosts) return _brandsHosts;
     var list = _brandsInjected;
     if (!list) {
-      // 浏览器端：data.js 以 <script nonce="poOaA6RcMTvYiys6fdBtJQ=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
+      // 浏览器端：data.js 以 <script nonce="lIRiZ57sMWBhbANyhq8lrg=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
       try { if (typeof BRANDS_DIR !== "undefined" && BRANDS_DIR) list = BRANDS_DIR; } catch (e) { list = null; }
       if (!list && typeof globalThis !== "undefined" && globalThis.BRANDS_DIR) list = globalThis.BRANDS_DIR;
     }
@@ -33140,7 +33144,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="poOaA6RcMTvYiys6fdBtJQ==">
+<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
 // lib/fx.js — 财报数值「显示层」换算：原币 → 人民币（data.js 数据不动，仅展示换算）
 //
 // 单一真源：汇率表 + 解析/换算逻辑。index.html（浏览器交互版）与 scripts/build_standalone.js
@@ -33344,7 +33348,7 @@ const REPORTS = [
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();
 </script>
-<script nonce="poOaA6RcMTvYiys6fdBtJQ==">
+<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
 (function(){
 document.body.classList.add("js");
 
@@ -33531,7 +33535,15 @@ function renderFeed(){
   var _gm=groupByMonth(arr),months=_gm.months,order=_gm.order;
   var banner=cur.brand!=="all"?'<div class="bc-banner"><span class="lab">品牌消息合集</span><strong>'+esc(cur.brand)+'</strong><span>'+arr.length+' 条</span><button type="button" class="bc-clear" data-clear="1">清除筛选</button></div>':"";
   var html;
-  if(!order.length)html='<div class="empty">未找到匹配条目。</div>';
+  if(!order.length){
+    // WEB-31（2026-11-15）：窗口内 0 条时原来只给「未找到匹配条目。」一行。实测 57 个品牌在
+    // 当前窗口内 0 条，其中 27 个有历史档案（哈苏 4 条、Kodak 2 条…）——用户选中后只看到空白，
+    // 没有任何通往 #/brand/<name> 的出口，等于把已有档案藏起来。此处给出档案总数与直达链接。
+    var _bt=(cur.brand!=="all")?brandTotal(cur.brand):0;
+    html='<div class="empty">未找到匹配条目。'+
+      (_bt>0?('该品牌档案内共 '+_bt+' 条历史记录：<a href="#/brand/'+attr(encodeURIComponent(normBrand(cur.brand)))+'">查看 '+esc(cur.brand)+' 品牌档案</a>'):'')+
+      '</div>';
+  }
   else html=order.map(function(mk,idx){
     var items=months[mk].slice(),total=items.length,lead=items.shift();
     var grid='<div class="grid">'+itemHtml(lead,true)+items.map(function(it){return itemHtml(it,false);}).join("")+'</div>';
@@ -33841,7 +33853,11 @@ document.addEventListener("click",function(e){
   var t=e.target;
   while(t&&t.nodeType!==1)t=t.parentNode;
   if(!(t&&t.nodeType===1))return;
-  if(t.hasAttribute&&t.hasAttribute("data-clear")){cur.brand="all";var fb=document.getElementById("f-brand");if(fb)fb.value="all";renderFeed();return;}
+  // WEB-29（2026-11-15）：横幅「清除筛选」只刷新品流。下拉（:959）与搜索框（:961）在 WEB-20
+  // 修复时都补了 renderArchive()，唯独这条 data-clear 分支漏掉：归档一旦访问过且未置脏，
+  // ensureViewRendered 直接 return，旧品牌结果常驻——横幅消失、下拉显示「全部品牌」，
+  // 切回归档却仍只有原来那个品牌的条目，界面上没有任何线索说明它还带着旧条件。
+  if(t.hasAttribute&&t.hasAttribute("data-clear")){cur.brand="all";var fb=document.getElementById("f-brand");if(fb)fb.value="all";renderFeed();renderArchive();return;}
   if(t.classList&&t.classList.contains("desc-toggle")){
     var card=t;while(card&&card.nodeType===1&&!(card.classList&&card.classList.contains("item")))card=card.parentNode;
     if(card&&card.nodeType===1){var open=card.classList.toggle("expanded");t.textContent=open?"收起正文":"展开正文";t.setAttribute("aria-expanded",open?"true":"false");}

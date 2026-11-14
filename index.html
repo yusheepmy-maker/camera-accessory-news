@@ -4,7 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" id="meta-theme" content="#F2EFE6">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-BjcYat7ATvYPuEx8EZykaA=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-ELAxCrGYipG/0jtXofT23w=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<script nonce="ELAxCrGYipG/0jtXofT23w==">
+/* WEB-24（2026-11-14）：主题必须在首帧前定。原实现只在文档末尾的内联 IIFE 里调 applyTheme，
+   实测 deploy/index.html 中该脚本起始于第 3,191,118 / 3,232,185 字节（98.7%），
+   深色偏好用户要等整篇文档解析完才翻转 → 首屏整页浅色闪烁。
+   此处提前读同一份 localStorage 键（cam-theme）与系统偏好，只做属性设置，不依赖任何库。
+   必须写成无属性的裸 <script nonce="ELAxCrGYipG/0jtXofT23w==">：build_standalone 的 CSP nonce 重写只匹配 <script nonce="ELAxCrGYipG/0jtXofT23w==">，
+   带属性会被漏加 nonce，随后被 CSP 静默拦下（且构建断言会直接失败）。 */
+(function(){try{
+  var t=localStorage.getItem("cam-theme");
+  if(t!=="light"&&t!=="dark")t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+  document.documentElement.setAttribute("data-theme",t);
+  var m=document.getElementById("meta-theme");
+  if(m&&t==="dark")m.setAttribute("content","#14181a");
+}catch(e){}})();
+</script>
 <title>摄影器材配件新品收集</title>
 <style>
 :root{
@@ -311,10 +326,10 @@ body.js .view.active{display:block}
 <div id="progress" aria-hidden="true"></div>
 
 <!-- verify_page 守卫锚点（视觉隐藏，结构与线上一致；缺失会导致 release 阻断） -->
-<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-14 17:20</b>。</div>
+<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-14 17:37</b>。</div>
 <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源）</div>
 <div id="pending-banner" hidden role="button" tabindex="0" aria-expanded="false"><b id="pb-n">0</b> 家厂商官网待核实，点此展开查看<div id="pb-body" hidden></div></div>
-<span id="upd" hidden>更新于 2026-11-14 17:20</span>
+<span id="upd" hidden>更新于 2026-11-14 17:37</span>
 
 <header class="masthead">
   <div class="mast-inner">
@@ -361,7 +376,7 @@ body.js .view.active{display:block}
             <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>
             <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>
           </div></div>
-          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-14 17:20</b><br>窗口内 <b>516</b> 条 · 目录 <b>185</b> 家 · 信源站点 <b>443</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
+          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-14 17:37</b><br>窗口内 <b>516</b> 条 · 目录 <b>185</b> 家 · 信源站点 <b>443</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
         </div>
       </div>
     </div>
@@ -393,12 +408,12 @@ body.js .view.active{display:block}
 
 <footer class="foot">
   <div class="fn">摄影器材配件新品收集</div>
-  <div>数据更新于 <b id="upd3">2026-11-14 17:20</b> · 每周五自动巡检更新。</div>
+  <div>数据更新于 <b id="upd3">2026-11-14 17:37</b> · 每周五自动巡检更新。</div>
   <div style="margin-top:8px;color:#8fa097">数据每周五自动巡检更新，实时读取 data.js，未添加或改动任何条目。</div>
 </footer>
 
-<script nonce="BjcYat7ATvYPuEx8EZykaA==">
-const UPDATED = "2026-11-14 17:20";
+<script nonce="ELAxCrGYipG/0jtXofT23w==">
+const UPDATED = "2026-11-14 17:37";
 
 const HOT = [
   {
@@ -32713,7 +32728,7 @@ const REPORTS = [
 ];
 
 </script>
-<script nonce="BjcYat7ATvYPuEx8EZykaA==">
+<script nonce="ELAxCrGYipG/0jtXofT23w==">
 // lib/confidence.js — 可信度域名分类与 confidenceOf 计算（浏览器 + node 共用）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 CONF_*/hostOf/confidenceOf；node 端 require 拿 module.exports。
 //
@@ -33012,7 +33027,7 @@ const REPORTS = [
     if (_brandsHosts) return _brandsHosts;
     var list = _brandsInjected;
     if (!list) {
-      // 浏览器端：data.js 以 <script nonce="BjcYat7ATvYPuEx8EZykaA=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
+      // 浏览器端：data.js 以 <script nonce="ELAxCrGYipG/0jtXofT23w=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
       try { if (typeof BRANDS_DIR !== "undefined" && BRANDS_DIR) list = BRANDS_DIR; } catch (e) { list = null; }
       if (!list && typeof globalThis !== "undefined" && globalThis.BRANDS_DIR) list = globalThis.BRANDS_DIR;
     }
@@ -33138,7 +33153,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="BjcYat7ATvYPuEx8EZykaA==">
+<script nonce="ELAxCrGYipG/0jtXofT23w==">
 // lib/fx.js — 财报数值「显示层」换算：原币 → 人民币（data.js 数据不动，仅展示换算）
 //
 // 单一真源：汇率表 + 解析/换算逻辑。index.html（浏览器交互版）与 scripts/build_standalone.js
@@ -33342,7 +33357,7 @@ const REPORTS = [
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();
 </script>
-<script nonce="BjcYat7ATvYPuEx8EZykaA==">
+<script nonce="ELAxCrGYipG/0jtXofT23w==">
 (function(){
 document.body.classList.add("js");
 
@@ -33535,11 +33550,18 @@ function renderFeed(){
     var grid='<div class="grid">'+itemHtml(lead,true)+items.map(function(it){return itemHtml(it,false);}).join("")+'</div>';
     return '<details class="month" id="m-'+esc(mk)+'"'+(idx===0?' open':'')+'><summary class="month-h"><span class="m">'+esc(mk.replace("-","年")+"月")+'</span><span class="c">'+total+' 条</span><span class="caret">▾</span></summary>'+grid+'</details>';
   }).join("");
-  _feedCache=html;
-  document.getElementById("feed").innerHTML=banner+html;
+  // WEB-26（2026-11-14）：缓存必须与写进 DOM 的内容一致。原实现只缓存月份块，
+  // 命中走 `innerHTML=_feedCache` 时品牌横幅（bc-banner，含唯一的「清除筛选」按钮）被丢掉：
+  // 选「佳能」后在搜索框敲一个空格，sig 不变 → 命中缓存 → 横幅消失、列表仍是被过滤的 10 条，
+  // 用户失去唯一的退出筛选入口。故把 banner 一并纳入缓存，命中与未命中产出同一份 HTML。
+  _feedCache=banner+html;
+  document.getElementById("feed").innerHTML=_feedCache;
   document.getElementById("fcount").textContent=arr.length+" 条 · 窗口 "+WIN.length+" 个月（"+WIN[WIN.length-1]+" ~ "+WIN[0]+"）";
 }
 function renderArchive(){
+  // WEB-25：归档视图尚未被激活过时不渲染，只置脏；首次切到该视图时由 ensureViewRendered 渲染。
+  // 筛选变更（品牌下拉 / 关键字）仍会调用本函数——此处记脏，激活时按当前筛选重算，结果一致。
+  if(!_viewRendered.archive){_viewDirty.archive=true;return;}
   var arr=D0.filter(function(it){return !inWindow(it)&&pass(it);});
   arr.sort(function(a,b){return a.date<b.date?1:-1;});
   var _gm=groupByMonth(arr),months=_gm.months,order=_gm.order;
@@ -33674,7 +33696,18 @@ function renderNextReport(r){
   var rows=info.rows.map(function(x){return '<div class="rep-hl-item"><span class="rep-hl-date">'+esc(x.est)+'</span><span class="rep-hl-period">'+esc(x.label)+(x.isNext?" ← 下次":"")+'</span><span class="rep-hl-rev">'+esc(x.wt)+'</span></div>';}).join("");
   return '<details class="rep-next"><summary><span>预计下次财报：'+esc(n.label)+'（'+esc(n.est)+' 前后）</span><span class="cd">'+esc(cd)+'</span></summary><div style="padding:0 13px 11px">'+rows+'</div></details>';
 }
-function yoyCls(v){if(!v||v==="—"||v==="-")return "flat";if(v.charAt(0)==="+")return "up";if(v.charAt(0)==="-")return "down";return "flat";}
+function yoyCls(v){
+  if(!v||v==="—"||v==="-")return "flat";
+  if(v.charAt(0)==="+")return "up";
+  if(v.charAt(0)==="-")return "down";
+  // WEB-27（2026-11-14）：文字型同比原先一律落 flat（灰色），改善与恶化同色。
+  // 数据实测 24 处：亏损收窄 11 / 亏损扩大 4 / 转亏 5 / 由盈转亏 1 / 転亏 1，另有带括注的
+  // 「转亏（上年同期 +¥…）」。判定顺序必须先「收窄」后「转亏｜扩大」——「亏损收窄」含「亏损」，
+  // 顺序反了会把 11 条改善全判成恶化。
+  if(/收窄|扭亏|减亏/.test(v))return "up";
+  if(/扩大|转亏|転亏|由盈转亏/.test(v))return "down";
+  return "flat";
+}
 function fxVal(v,ccy){var r=(typeof FX!=="undefined"&&FX.convert)?FX.convert(v,ccy):{cny:null,orig:null};return r.cny?(esc(r.cny)+(r.orig?'<span class="rep-m-orig">（原币 '+esc(r.orig)+'）</span>':"")):esc(v||"—");}
 function fxText(v,ccy){if(v==null||v==="")return esc(v||"—");return (typeof FX!=="undefined"&&FX.convertProse)?esc(FX.convertProse(String(v),ccy)):esc(String(v));}
 function repMetric(label,val,yv){if(!val)return "";var y=yoyCls(yv);return '<div class="rep-m"><div class="rep-ml">'+esc(label)+'</div><div class="rep-mv">'+val+'</div><div class="yoy '+y+'">'+esc(yv||"")+'</div></div>';}
@@ -33772,12 +33805,35 @@ function renderReports(){
 
 /* ============ 路由（URL 驱动 · 含品牌详情） ============ */
 var VIEWS=["home","upcoming","brand","reports","archive"];
+// WEB-25（2026-11-14）：归档与财报视图不在首屏渲染，首次激活时再渲染。
+// 依据：伪 DOM 实测首屏各容器 innerHTML 字符数 feed 667,366 / archive 499,479 / dir 140,423 /
+// reports 64,303，不可见视图合计 706,474，占全部 1,387,382 的 50.9%；Node 侧纯拼串已 107ms，
+// 浏览器另需把这批字符串解析成 DOM。构建产物已由 build_standalone 预渲染同一份内容，
+// 首屏再跑一遍等于同一块标记被解析两次。
+// 边界：renderDir 不纳入懒加载——它同时产出品牌下拉 #f-brand 的 option（交互入口），
+// 延后会直接让首页筛选器空掉。
+var _viewRendered={},_viewDirty={};
+function ensureViewRendered(name){
+  if(name!=="archive"&&name!=="reports")return;
+  if(_viewRendered[name]&&!_viewDirty[name])return;
+  _viewRendered[name]=true;_viewDirty[name]=false;
+  try{ if(name==="archive")renderArchive(); else renderReports(); }
+  catch(e){console.error("[view] "+name+" 渲染失败：",e);}
+}
 function showView(name){
   if(VIEWS.indexOf(name)<0)name="home";
+  ensureViewRendered(name);
   VIEWS.forEach(function(n){var el=document.getElementById("view-"+n);if(el)el.classList.toggle("active",n===name);});
   var links=document.querySelectorAll("[data-view]");
   for(var i=0;i<links.length;i++){var on=links[i].getAttribute("data-view")===name;links[i].classList.toggle("active",on);if(on)links[i].setAttribute("aria-current","page");else links[i].removeAttribute("aria-current");}
+  // WEB-28（2026-11-14）：html{scroll-behavior:smooth} 会接管未指定 behavior 的 scrollTo
+  // （CSSOM-View：未给 behavior 时继承该 CSS 属性），切视图实际执行的是平滑滚动——
+  // 旧视图内容已被换掉，用户看到的是从中段飞过的空白。这里临时置 auto 后还原，
+  // 不改全局 CSS：站内锚点（#m-YYYY-MM / #a-YYYY-MM）仍走浏览器原生平滑滚动。
+  var de=document.documentElement,prevSB=de.style.scrollBehavior;
+  de.style.scrollBehavior="auto";
   window.scrollTo(0,0);
+  de.style.scrollBehavior=prevSB;
 }
 function route(){
   var h=(location.hash||"").replace(/^#\/?/,"");
@@ -33861,8 +33917,9 @@ if(tt)tt.addEventListener("click",function(){var cur=document.documentElement.ge
 
 /* ============ 分段隔离渲染（任一阶段抛错不拖垮整页） ============ */
 function renderAll(){
-  var stages=[["renderMeta",renderMeta],["renderHot",renderHot],["renderFeed",renderFeed],["renderArchive",renderArchive],
-              ["renderSide",renderSide],["renderUpcomingView",renderUpcomingView],["renderDir",renderDir],["renderReports",renderReports]];
+  // WEB-25：renderArchive / renderReports 已移出首屏批次，首次切换视图时按需渲染（见 ensureViewRendered）。
+  var stages=[["renderMeta",renderMeta],["renderHot",renderHot],["renderFeed",renderFeed],
+              ["renderSide",renderSide],["renderUpcomingView",renderUpcomingView],["renderDir",renderDir]];
   for(var i=0;i<stages.length;i++){try{stages[i][1]();}catch(e){console.error("[renderAll] "+stages[i][0]+" 失败：",e);}}
   try{route();}catch(e){console.error("[renderAll] route 失败：",e);showView("home");}
 }

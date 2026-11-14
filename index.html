@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" id="meta-theme" content="#F2EFE6">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-lIRiZ57sMWBhbANyhq8lrg=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
-<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-Wy690WEBYisFRfngD31f1g=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<script nonce="Wy690WEBYisFRfngD31f1g==">
 /* WEB-24（2026-11-14）：主题必须在首帧前定。原实现只在文档末尾的内联 IIFE 里调 applyTheme，
    实测 deploy/index.html 中该脚本起始于第 3,191,118 / 3,232,185 字节（98.7%），
    深色偏好用户要等整篇文档解析完才翻转 → 首屏整页浅色闪烁。
    此处提前读同一份 localStorage 键（cam-theme）与系统偏好，只做属性设置，不依赖任何库。
-   必须写成无属性的裸 <script nonce="lIRiZ57sMWBhbANyhq8lrg==">：build_standalone 的 CSP nonce 重写只匹配 <script nonce="lIRiZ57sMWBhbANyhq8lrg==">，
+   必须写成无属性的裸 <script nonce="Wy690WEBYisFRfngD31f1g==">：build_standalone 的 CSP nonce 重写只匹配 <script nonce="Wy690WEBYisFRfngD31f1g==">，
    带属性会被漏加 nonce，随后被 CSP 静默拦下（且构建断言会直接失败）。 */
 (function(){try{
   var t=localStorage.getItem("cam-theme");
@@ -330,10 +330,10 @@ body.js .view.active{display:block}
 <div id="progress" aria-hidden="true"></div>
 
 <!-- verify_page 守卫锚点（视觉隐藏，结构与线上一致；缺失会导致 release 阻断） -->
-<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-15 00:47</b>。</div>
+<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-15 01:36</b>。</div>
 <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源）</div>
 <div id="pending-banner" hidden role="button" tabindex="0" aria-expanded="false"><b id="pb-n">0</b> 家厂商官网待核实，点此展开查看<div id="pb-body" hidden></div></div>
-<span id="upd" hidden>更新于 2026-11-15 00:47</span>
+<span id="upd" hidden>更新于 2026-11-15 01:36</span>
 
 <header class="masthead">
   <div class="mast-inner">
@@ -380,7 +380,7 @@ body.js .view.active{display:block}
             <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>
             <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>
           </div></div>
-          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-15 00:47</b><br>窗口内 <b>516</b> 条 · 目录 <b>185</b> 家 · 信源站点 <b>442</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
+          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-15 01:36</b><br>窗口内 <b>516</b> 条 · 目录 <b>185</b> 家 · 信源站点 <b>442</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
         </div>
       </div>
     </div>
@@ -412,12 +412,12 @@ body.js .view.active{display:block}
 
 <footer class="foot">
   <div class="fn">摄影器材配件新品收集</div>
-  <div>数据更新于 <b id="upd3">2026-11-15 00:47</b> · 每周五自动巡检更新。</div>
+  <div>数据更新于 <b id="upd3">2026-11-15 01:36</b> · 每周五自动巡检更新。</div>
   <div style="margin-top:8px;color:#8fa097">数据每周五自动巡检更新，实时读取 data.js，未添加或改动任何条目。</div>
 </footer>
 
-<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
-const UPDATED = "2026-11-15 00:47";
+<script nonce="Wy690WEBYisFRfngD31f1g==">
+const UPDATED = "2026-11-15 01:36";
 
 const HOT = [
   {
@@ -32719,7 +32719,7 @@ const REPORTS = [
 ];
 
 </script>
-<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
+<script nonce="Wy690WEBYisFRfngD31f1g==">
 // lib/confidence.js — 可信度域名分类与 confidenceOf 计算（浏览器 + node 共用）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 CONF_*/hostOf/confidenceOf；node 端 require 拿 module.exports。
 //
@@ -33018,7 +33018,7 @@ const REPORTS = [
     if (_brandsHosts) return _brandsHosts;
     var list = _brandsInjected;
     if (!list) {
-      // 浏览器端：data.js 以 <script nonce="lIRiZ57sMWBhbANyhq8lrg=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
+      // 浏览器端：data.js 以 <script nonce="Wy690WEBYisFRfngD31f1g=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
       try { if (typeof BRANDS_DIR !== "undefined" && BRANDS_DIR) list = BRANDS_DIR; } catch (e) { list = null; }
       if (!list && typeof globalThis !== "undefined" && globalThis.BRANDS_DIR) list = globalThis.BRANDS_DIR;
     }
@@ -33144,7 +33144,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
+<script nonce="Wy690WEBYisFRfngD31f1g==">
 // lib/fx.js — 财报数值「显示层」换算：原币 → 人民币（data.js 数据不动，仅展示换算）
 //
 // 单一真源：汇率表 + 解析/换算逻辑。index.html（浏览器交互版）与 scripts/build_standalone.js
@@ -33348,7 +33348,7 @@ const REPORTS = [
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();
 </script>
-<script nonce="lIRiZ57sMWBhbANyhq8lrg==">
+<script nonce="Wy690WEBYisFRfngD31f1g==">
 (function(){
 document.body.classList.add("js");
 
@@ -33367,6 +33367,12 @@ var SOCIAL_LABEL={ins:"INS",yt:"YT",x:"X",fb:"FB",tiktok:"TK",weibo:"微博",xia
 /* ============ 安全：属性位转义 + 协议白名单 ============ */
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function attr(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;");}
+/* 变更检测写入器（2026-11-15）：内容没变就不碰 DOM。
+   原实现 18 处直接 `el.innerHTML = html`，其中若干路径会对同一容器连写两次完全相同的 HTML
+   （清除筛选后重跑品牌流、搜索框与品牌下拉先后触发归档重绘），每次都是一次全量重排。
+   这里统一按「上次写进去的字符串」比对：相同即跳过，不同才写。缓存挂在元素自身属性上，
+   元素被父级 innerHTML 重建后自动失效（新节点没有该属性），不会把旧内容当成已渲染。 */
+function paint(el,html){if(!el)return;if(el.__html===html)return;el.innerHTML=html;el.__html=html;}
 function safeUrl(u){u=u==null?"":String(u).replace(/[\u0000-\u001f\u007f]/g,"").trim();if(!u)return "#";if(/^(https?:|mailto:|tel:)/i.test(u))return u;if(/^[a-z][a-z0-9+.\-]*:/i.test(u))return "#";return u;}
 function hostOf_(u){try{return (typeof hostOf==="function")?hostOf(u):new URL(u).host;}catch(e){return "";}}
 function confOf(it){return (typeof it.confidence==="number")?it.confidence:((typeof confidenceOf==="function")?confidenceOf(it):0);}
@@ -33490,14 +33496,14 @@ function renderMeta(){
   var pb=document.getElementById("pending-banner");
   if(pb){
     if(pend.length){pb.classList.add("show");document.getElementById("pb-n").textContent=pend.length;
-      document.getElementById("pb-body").innerHTML=pend.map(function(b){return '<div><span>'+esc(b.name)+'</span> · <a href="'+attr(safeUrl(b.official))+'" target="_blank" rel="noopener">查官网 →</a></div>';}).join("");}
+      paint(document.getElementById("pb-body"), pend.map(function(b){return '<div><span>'+esc(b.name)+'</span> · <a href="'+attr(safeUrl(b.official))+'" target="_blank" rel="noopener">查官网 →</a></div>';}).join(""));}
     else{pb.classList.remove("show");pb.hidden=true;}
   }
   var inw=D0.filter(inWindow).length;
   var hosts={},n=0;
   D0.forEach(function(it){[it.source].concat(it.sources||[]).forEach(function(s){if(s&&s.url){var h=hostOf_(s.url);if(h&&!hosts[h]){hosts[h]=1;n++;}}});});
   var snap=document.getElementById("snapshot");
-  if(snap)snap.innerHTML='数据更新于 <b>'+esc(U0)+'</b><br>窗口内 <b>'+inw+'</b> 条 · 目录 <b>'+B0.length+'</b> 家 · 信源站点 <b>'+n+'</b> 个<br>窗口 '+WIN[WIN.length-1]+' ~ '+WIN[0]+'（'+WIN.length+' 个月）';
+  if(snap)paint(snap,'数据更新于 <b>'+esc(U0)+'</b><br>窗口内 <b>'+inw+'</b> 条 · 目录 <b>'+B0.length+'</b> 家 · 信源站点 <b>'+n+'</b> 个<br>窗口 '+WIN[WIN.length-1]+' ~ '+WIN[0]+'（'+WIN.length+' 个月）');
   var fb=document.getElementById("fx-basis");
   if(fb&&typeof FX!=="undefined")fb.textContent="币值按 "+FX.BASIS+" 中间价折算人民币";
   var dt=document.getElementById("dir-total");if(dt)dt.textContent="共 "+B0.length+" 家";
@@ -33507,7 +33513,7 @@ function renderMeta(){
 function renderHot(){
   var lead=H0[0]?hotLead(H0[0]):"";
   var mini=H0.slice(1).map(hotMini).join("");
-  document.getElementById("hot").innerHTML=lead+'<div class="hero-side">'+mini+'</div>';
+  paint(document.getElementById("hot"), lead+'<div class="hero-side">'+mini+'</div>');
   var hc=document.getElementById("hot-count");if(hc)hc.textContent=H0.length+" 条";
 }
 function hotLead(h){
@@ -33528,7 +33534,7 @@ function groupByMonth(arr){var months={},order=[];arr.forEach(function(it){var m
 var _feedSig="",_feedCache="";
 function renderFeed(){
   var sig=cur.brand+"|"+cur.kw;
-  if(sig===_feedSig&&_feedCache) {document.getElementById("feed").innerHTML=_feedCache;return;}
+  if(sig===_feedSig&&_feedCache) {paint(document.getElementById("feed"),_feedCache);return;}
   _feedSig=sig;
   var arr=D0.filter(function(it){return inWindow(it)&&pass(it);});
   arr.sort(function(a,b){if(a.date!==b.date)return a.date<b.date?1:-1;return (a.time||"")<(b.time||"")?1:-1;});
@@ -33554,7 +33560,7 @@ function renderFeed(){
   // 选「佳能」后在搜索框敲一个空格，sig 不变 → 命中缓存 → 横幅消失、列表仍是被过滤的 10 条，
   // 用户失去唯一的退出筛选入口。故把 banner 一并纳入缓存，命中与未命中产出同一份 HTML。
   _feedCache=banner+html;
-  document.getElementById("feed").innerHTML=_feedCache;
+  paint(document.getElementById("feed"),_feedCache);
   document.getElementById("fcount").textContent=arr.length+" 条 · 窗口 "+WIN.length+" 个月（"+WIN[WIN.length-1]+" ~ "+WIN[0]+"）";
 }
 function renderArchive(){
@@ -33565,22 +33571,22 @@ function renderArchive(){
   arr.sort(function(a,b){return a.date<b.date?1:-1;});
   var _gm=groupByMonth(arr),months=_gm.months,order=_gm.order;
   var box=document.getElementById("archive");
-  if(!order.length){box.innerHTML='<div class="empty">无归档条目</div>';return;}
-  box.innerHTML='<h2 class="kicker">窗口外历史条目 · '+arr.length+' 条</h2>'+order.map(function(mk,idx){
+  if(!order.length){paint(box,'<div class="empty">无归档条目</div>');return;}
+  paint(box,'<h2 class="kicker">窗口外历史条目 · '+arr.length+' 条</h2>'+order.map(function(mk,idx){
     var items=months[mk];
     return '<details class="month" id="a-'+esc(mk)+'"'+(idx===0?' open':'')+'><summary class="month-h"><span class="m">'+esc(mk.replace("-","年")+"月")+'</span><span class="c">'+items.length+' 条</span><span class="caret">▾</span></summary><div class="grid">'+items.map(function(it){return itemHtml(it,false);}).join("")+'</div></details>';
-  }).join("");
+  }).join(""));
 }
 
 /* ============ 渲染：侧栏 / 即将发布 ============ */
 function renderSide(){
   var counts={};D0.filter(inWindow).forEach(function(it){var m=monthKeyOf(it);counts[m]=(counts[m]||0)+1;});
   var order=Object.keys(counts).sort().reverse();
-  document.getElementById("monnav").innerHTML=order.map(function(m){return '<a href="#m-'+esc(m)+'"><span>'+esc(m.replace("-","年")+"月")+'</span><span class="n">'+counts[m]+'</span></a>';}).join("");
+  paint(document.getElementById("monnav"), order.map(function(m){return '<a href="#m-'+esc(m)+'"><span>'+esc(m.replace("-","年")+"月")+'</span><span class="n">'+counts[m]+'</span></a>';}).join(""));
   var up=UPCOMING.slice(0,6).map(function(it){
     return '<div class="up-item"><span class="t">'+esc(TYPES[it.type]||'动态')+'</span><a href="#/brand/'+attr(encodeURIComponent(normBrand(it.brand)))+'">'+esc(it.title)+'</a><span class="d">'+esc(it.date)+(it.eta?(' · 预计 '+esc(it.eta)):'')+'</span></div>';
   }).join("");
-  document.getElementById("side-upcoming").innerHTML=up||'<div class="note">近 30 天暂无即将发布条目</div>';
+  paint(document.getElementById("side-upcoming"), up||'<div class="note">近 30 天暂无即将发布条目</div>');
 }
 function renderUpcomingView(){
   var box=document.getElementById("upcoming");
@@ -33588,7 +33594,7 @@ function renderUpcomingView(){
     var eta=it.eta?(' · 预计 '+esc(it.eta)):'';
     return '<div class="up-row"><span class="tag">'+esc(TYPES[it.type]||'动态')+'</span><h3>'+esc(it.title)+'</h3><div class="meta"><a class="brand" href="#/brand/'+attr(encodeURIComponent(normBrand(it.brand)))+'">'+esc(normBrand(it.brand))+'</a><span class="conf">可信度 '+confOf(it)+'</span></div><div class="src">'+esc(it.date)+eta+'</div></div>';
   }).join(""):'<div class="empty">近 30 天暂无即将发布条目</div>';
-  box.innerHTML='<div class="chan-head"><div class="kicker">即将发布</div><h2>预热与官宣 · 近 30 天窗口 · '+UPCOMING.length+' 条</h2></div>'+html;
+  paint(box,'<div class="chan-head"><div class="kicker">即将发布</div><h2>预热与官宣 · 近 30 天窗口 · '+UPCOMING.length+' 条</h2></div>'+html);
 }
 
 /* ============ 渲染：品牌目录 + 品牌详情 ============ */
@@ -33626,16 +33632,16 @@ function renderDir(){
     chips.splice(avIdx+1,0,t);
   }
   tail.forEach(function(g){chips.push(chip(g));});
-  document.getElementById("dir-jump").innerHTML=chips.join("");
-  document.getElementById("dir-jump-acc").innerHTML=accSubs.map(chip).join("");
+  paint(document.getElementById("dir-jump"), chips.join(""));
+  paint(document.getElementById("dir-jump-acc"), accSubs.map(chip).join(""));
   var body=main.concat(accSubs,tail).map(function(g){
     return '<div class="dir-group" id="'+attr(gid(g.key))+'"><h3>'+esc(g.label)+'<span class="n">'+g.list.length+'</span></h3><div class="brand-grid">'+g.list.map(brandCardHtml).join("")+'</div></div>';
   }).join("");
-  document.getElementById("dir").innerHTML=body;
+  paint(document.getElementById("dir"), body);
   var fb=document.getElementById("f-brand");
   if(fb){
     var names=B0.map(function(b){return b.name;}).sort(function(a,b){return a.localeCompare(b,"zh");});
-    fb.innerHTML='<option value="all">全部品牌</option>'+names.map(function(n){var c=brandCount(n);return '<option value="'+attr(n)+'">'+esc(n)+'（'+c+'）</option>';}).join("");
+    paint(fb, '<option value="all">全部品牌</option>'+names.map(function(n){var c=brandCount(n);return '<option value="'+attr(n)+'">'+esc(n)+'（'+c+'）</option>';}).join(""));
     fb.value=cur.brand;
   }
 }
@@ -33643,7 +33649,7 @@ function findDir(name){var out=null;B0.forEach(function(b){if(b.name===name||nor
 function renderBrand(name){
   var dirWrap=document.getElementById("brand-dir"),det=document.getElementById("brand-detail");
   if(!det)return;
-  if(!name){if(dirWrap)dirWrap.style.display="";det.setAttribute("hidden","");det.innerHTML="";return;}
+  if(!name){if(dirWrap)dirWrap.style.display="";det.setAttribute("hidden","");paint(det,"");return;}
   var nb=decodeURIComponent(name);
   var dir=findDir(nb);
   var items=D0.filter(function(d){return normBrand(d.brand)===normBrand(nb);}).sort(function(a,b){return a.date<b.date?1:-1;});
@@ -33653,7 +33659,7 @@ function renderBrand(name){
   }
   var html='<div class="brand-detail"><a class="back" href="#/brand">← 返回厂商目录</a><h2 class="kicker">'+esc(nb)+' <span style="font-family:var(--mono)">'+items.length+' 条</span></h2>'+head;
   html+=items.length?'<div class="grid" style="margin-top:16px">'+items.map(function(it){return itemHtml(it,false);}).join("")+'</div>':'<p class="note">该品牌已在厂商目录中持续跟踪，但暂未收录到新品条目。可点击上方「官网」查看最新动态。</p>';
-  det.innerHTML=html+'</div>';
+  paint(det, html+'</div>');
   if(dirWrap)dirWrap.style.display="none";
   det.removeAttribute("hidden");
 }
@@ -33770,7 +33776,7 @@ function renderReports(){
   var uniq={};R.forEach(function(r){uniq[r.ticker||r.company||"?"]=1;});
   if(tot)tot.textContent="共 "+Object.keys(uniq).length+" 张（M="+R.length+" 份）";
   var box=document.getElementById("reports");
-  if(!R.length){box.innerHTML='<div class="empty">暂无财报数据。</div>';return;}
+  if(!R.length){paint(box,'<div class="empty">暂无财报数据。</div>');return;}
   var gmap={};
   R.forEach(function(r){
     var k=r.ticker||r.company||"?";
@@ -33799,7 +33805,7 @@ function renderReports(){
       +'<span class="rep-sec">'+esc(SEC_LABEL[g.sector]||g.sector||"")+'</span></div>'
       +'<div class="rep-tl">'+items+'</div>'+more+'</section>';
   }).join("");
-  box.innerHTML=renderBench(R)+'<div class="rep-grid">'+body+'</div>';
+  paint(box, renderBench(R)+'<div class="rep-grid">'+body+'</div>');
 }
 
 /* ============ 路由（URL 驱动 · 含品牌详情） ============ */

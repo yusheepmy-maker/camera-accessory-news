@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" id="meta-theme" content="#F2EFE6">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-GNpj7plNvsYN6q6+1neh0g=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
-<script nonce="GNpj7plNvsYN6q6+1neh0g==">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-D9iFnO2cWVuLHicZGWtiyg=='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<script nonce="D9iFnO2cWVuLHicZGWtiyg==">
 /* WEB-24（2026-11-14）：主题必须在首帧前定。原实现只在文档末尾的内联 IIFE 里调 applyTheme，
    实测 deploy/index.html 中该脚本起始于第 3,191,118 / 3,232,185 字节（98.7%），
    深色偏好用户要等整篇文档解析完才翻转 → 首屏整页浅色闪烁。
    此处提前读同一份 localStorage 键（cam-theme）与系统偏好，只做属性设置，不依赖任何库。
-   必须写成无属性的裸 <script nonce="GNpj7plNvsYN6q6+1neh0g==">：build_standalone 的 CSP nonce 重写只匹配 <script nonce="GNpj7plNvsYN6q6+1neh0g==">，
+   必须写成无属性的裸 <script nonce="D9iFnO2cWVuLHicZGWtiyg==">：build_standalone 的 CSP nonce 重写只匹配 <script nonce="D9iFnO2cWVuLHicZGWtiyg==">，
    带属性会被漏加 nonce，随后被 CSP 静默拦下（且构建断言会直接失败）。 */
 (function(){try{
   var t=localStorage.getItem("cam-theme");
@@ -330,10 +330,10 @@ body.js .view.active{display:block}
 <div id="progress" aria-hidden="true"></div>
 
 <!-- verify_page 守卫锚点（视觉隐藏，结构与线上一致；缺失会导致 release 阻断） -->
-<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-20 03:25</b>。</div>
+<div class="subtitle">监控摄影器材中英文行业媒体等，每周五自动巡检更新。数据更新于 <b id="upd2">2026-11-20 03:29</b>。</div>
 <div class="src-key">⭐ 重点信源：<a href="https://www.dpreview.com/" target="_blank" rel="noopener">DPreview</a> · <a href="https://petapixel.com/" target="_blank" rel="noopener">PetaPixel</a> · <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>（中英文行业媒体/评测，含视频） · <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>（传闻/爆料首要信源）</div>
 <div id="pending-banner" hidden role="button" tabindex="0" aria-expanded="false"><b id="pb-n">0</b> 家厂商官网待核实，点此展开查看<div id="pb-body" hidden></div></div>
-<span id="upd" hidden>更新于 2026-11-20 03:25</span>
+<span id="upd" hidden>更新于 2026-11-20 03:29</span>
 
 <header class="masthead">
   <div class="mast-inner">
@@ -353,7 +353,7 @@ body.js .view.active{display:block}
   <section class="view view-home active" id="view-home">
     <div class="wrap">
       <h2 class="kicker">本周焦点 · 热门 <span id="hot-count" style="font-family:var(--mono)">5 条</span></h2>
-      <div class="hero hot-grid" id="hot"><div class="hot-card hero-lead"><div class="hl-kick">本周焦点 · 头条</div><div class="meta"><span class="tag">官宣</span><span class="stg">预售</span><span class="conf">可信度 100</span></div><h3 class="h-title">寻影 OBSBOT 发布 Tail 2 ADV PTZR 相机：21 倍光学变焦、三轴云台，预购 US$1,399</h3><div class="h-foot">2026-11-19<div style="color:#f1c79c;font-family:var(--mono);font-size:12px;margin-top:6px">US$1,399（预购价，原价 US$1,599）</div> <a href="https://www.obsbot.com/obsbot-tail-2-advanced-ptzr-4k-live-production-camera" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">OBSBOT 官方</a><div class="src" style="margin-top:10px;color:#bcc6bf">来源：<a href="https://www.obsbot.com/obsbot-tail-2-advanced-ptzr-4k-live-production-camera" target="_blank" rel="noopener" style="color:#e6ece8">OBSBOT 官方产品页</a></div></div></div><div class="hero-side"><div class="hot-card hot-mini"><div class="hm-num">02</div><div class="hm-body"><div class="meta"><span class="tag">官宣</span><span class="conf">可信度 85</span></div><h4>Lomography 推出 Lomo72 半格胶片机：一格拍两张、36 张卷出 72 张，US$79</h4><div class="src">2026-11-16</div></div></div><div class="hot-card hot-mini"><div class="hm-num">03</div><div class="hm-body"><div class="meta"><span class="tag">发布</span><span class="conf">可信度 100</span></div><h4>影石 Insta360 推出 Toast 彩色墨水屏相纸：3.7 英寸六色墨水屏、43g，¥429</h4><div class="src">2026-11-16</div></div></div><div class="hot-card hot-mini"><div class="hm-num">04</div><div class="hm-body"><div class="meta"><span class="tag">发布</span><span class="conf">可信度 100</span></div><h4>舒尔 Shure 发布 MV360 空间音频麦克风：USB-C 直连、四种拾音模式，US$349</h4><div class="src">2026-11-17</div></div></div><div class="hot-card hot-mini"><div class="hm-num">05</div><div class="hm-body"><div class="meta"><span class="tag">官宣</span><span class="conf">可信度 100</span></div><h4>松下发布 LUMIX SHX1 方盒电影机：6K 全画幅、机内 ProRes RAW 与 SSD 外录 BRAW，US$4,699.99</h4><div class="src">2026-11-17</div></div></div></div></div>
+      <div class="hero hot-grid" id="hot"><div class="hot-card hero-lead"><div class="hl-kick">本周焦点 · 头条</div><div class="meta"><span class="tag">官宣</span><span class="stg">预售</span><span class="conf">可信度 100</span></div><h3 class="h-title">寻影 OBSBOT 发布 Tail 2 ADV PTZR 相机：21 倍光学变焦、三轴云台，预购 US$1,399</h3><div class="h-foot">2026-11-19<div style="color:#f1c79c;font-family:var(--mono);font-size:12px;margin-top:6px">US$1,399（预购价，原价 US$1,599）</div> <a href="https://www.obsbot.com/cn" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">OBSBOT 官方（中国站）</a><div class="src" style="margin-top:10px;color:#bcc6bf">来源：<a href="https://petapixel.com/2026/11/19/obsbots-new-tail-2-adv-ptzr-camera-pairs-21x-optical-zoom-with-ai-tracking" target="_blank" rel="noopener" style="color:#e6ece8">PetaPixel</a></div></div></div><div class="hero-side"><div class="hot-card hot-mini"><div class="hm-num">02</div><div class="hm-body"><div class="meta"><span class="tag">官宣</span><span class="conf">可信度 85</span></div><h4>Lomography 推出 Lomo72 半格胶片机：一格拍两张、36 张卷出 72 张，US$79</h4><div class="src">2026-11-16</div></div></div><div class="hot-card hot-mini"><div class="hm-num">03</div><div class="hm-body"><div class="meta"><span class="tag">发布</span><span class="conf">可信度 100</span></div><h4>影石 Insta360 推出 Toast 彩色墨水屏相纸：3.7 英寸六色墨水屏、43g，¥429</h4><div class="src">2026-11-16</div></div></div><div class="hot-card hot-mini"><div class="hm-num">04</div><div class="hm-body"><div class="meta"><span class="tag">发布</span><span class="conf">可信度 100</span></div><h4>舒尔 Shure 发布 MV360 空间音频麦克风：USB-C 直连、四种拾音模式，US$349</h4><div class="src">2026-11-17</div></div></div><div class="hot-card hot-mini"><div class="hm-num">05</div><div class="hm-body"><div class="meta"><span class="tag">官宣</span><span class="conf">可信度 100</span></div><h4>松下发布 LUMIX SHX1 方盒电影机：6K 全画幅、机内 ProRes RAW 与 SSD 外录 BRAW，US$4,699.99</h4><div class="src">2026-11-17</div></div></div></div></div>
       <div class="cols">
         <div class="main">
           <div class="kicker">新品时间线 · 近 4 个月</div>
@@ -380,7 +380,7 @@ body.js .view.active{display:block}
             <a href="https://lensvid.com/" target="_blank" rel="noopener">LensVid</a>
             <a href="https://photorumors.com/" target="_blank" rel="noopener">PhotoRumors</a>
           </div></div>
-          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-20 03:25</b><br>窗口内 <b>526</b> 条 · 目录 <b>191</b> 家 · 信源站点 <b>453</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
+          <div class="sblock"><h4>数据快照</h4><div class="snapshot" id="snapshot">数据更新于 <b>2026-11-20 03:29</b><br>窗口内 <b>526</b> 条 · 目录 <b>191</b> 家 · 信源站点 <b>453</b> 个<br>窗口 2026-08 ~ 2026-11（4 个月）</div></div>
         </div>
       </div>
     </div>
@@ -412,12 +412,12 @@ body.js .view.active{display:block}
 
 <footer class="foot">
   <div class="fn">摄影器材配件新品收集</div>
-  <div>数据更新于 <b id="upd3">2026-11-20 03:25</b> · 每周五自动巡检更新。</div>
+  <div>数据更新于 <b id="upd3">2026-11-20 03:29</b> · 每周五自动巡检更新。</div>
   <div style="margin-top:8px;color:#8fa097">数据每周五自动巡检更新，实时读取 data.js，未添加或改动任何条目。</div>
 </footer>
 
-<script nonce="GNpj7plNvsYN6q6+1neh0g==">
-const UPDATED = "2026-11-20 03:25";
+<script nonce="D9iFnO2cWVuLHicZGWtiyg==">
+const UPDATED = "2026-11-20 03:29";
 
 const HOT = [
   {
@@ -428,12 +428,12 @@ const HOT = [
     "confidence": 100,
     "stage": "presale",
     "source": {
-      "name": "OBSBOT 官方产品页",
-      "url": "https://www.obsbot.com/obsbot-tail-2-advanced-ptzr-4k-live-production-camera"
+      "name": "PetaPixel",
+      "url": "https://petapixel.com/2026/11/19/obsbots-new-tail-2-adv-ptzr-camera-pairs-21x-optical-zoom-with-ai-tracking"
     },
     "buy": {
-      "name": "OBSBOT 官方",
-      "url": "https://www.obsbot.com/obsbot-tail-2-advanced-ptzr-4k-live-production-camera"
+      "name": "OBSBOT 官方（中国站）",
+      "url": "https://www.obsbot.com/cn"
     }
   },
   {
@@ -33000,7 +33000,7 @@ const REPORTS = [
 ];
 
 </script>
-<script nonce="GNpj7plNvsYN6q6+1neh0g==">
+<script nonce="D9iFnO2cWVuLHicZGWtiyg==">
 // lib/confidence.js — 可信度域名分类与 confidenceOf 计算（浏览器 + node 共用）
 // UMD 风格 IIFE：浏览器加载后给 globalThis 挂 CONF_*/hostOf/confidenceOf；node 端 require 拿 module.exports。
 //
@@ -33307,7 +33307,7 @@ const REPORTS = [
     if (_brandsHosts) return _brandsHosts;
     var list = _brandsInjected;
     if (!list) {
-      // 浏览器端：data.js 以 <script nonce="GNpj7plNvsYN6q6+1neh0g=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
+      // 浏览器端：data.js 以 <script nonce="D9iFnO2cWVuLHicZGWtiyg=="> 先加载，BRANDS_DIR 在该词法环境可见（const 不挂 globalThis）
       try { if (typeof BRANDS_DIR !== "undefined" && BRANDS_DIR) list = BRANDS_DIR; } catch (e) { list = null; }
       if (!list && typeof globalThis !== "undefined" && globalThis.BRANDS_DIR) list = globalThis.BRANDS_DIR;
     }
@@ -33433,7 +33433,7 @@ const REPORTS = [
 })();
 
 </script>
-<script nonce="GNpj7plNvsYN6q6+1neh0g==">
+<script nonce="D9iFnO2cWVuLHicZGWtiyg==">
 // lib/fx.js — 财报数值「显示层」换算：原币 → 人民币（data.js 数据不动，仅展示换算）
 //
 // 单一真源：汇率表 + 解析/换算逻辑。index.html（浏览器交互版）与 scripts/build_standalone.js
@@ -33637,7 +33637,7 @@ const REPORTS = [
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();
 </script>
-<script nonce="GNpj7plNvsYN6q6+1neh0g==">
+<script nonce="D9iFnO2cWVuLHicZGWtiyg==">
 (function(){
 document.body.classList.add("js");
 
